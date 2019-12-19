@@ -265,7 +265,17 @@ export default function ComplexGrid2() {
                     <Typography variant="body2" gutterBottom>
                       <p>
                         {" "}
-                        <LocationOnIcon className={classes.icons} /> Location :{" "}
+                        <LocationOnIcon className={classes.icons} /> Name:{" "}
+                        {CuOrder.name}
+                      </p>
+                    </Typography>
+                    {/* ))} */}
+                  </div>
+                  <div className={classes.orderDetails}>
+                    {/* {orders.map(order => ( */}
+                    <Typography variant="body2">
+                      <p>
+                        <ScheduleIcon className={classes.icons} /> Order Details:
                         {CuOrder.order_details}
                       </p>
                     </Typography>
@@ -282,13 +292,12 @@ export default function ComplexGrid2() {
                     </Typography>
                     {/* ))} */}
                   </div>
-
                   <div className={classes.orderDetails}>
                     {/* {orders.map(order => ( */}
                     <Typography variant="body2">
                       <p>
                         <BeenhereIcon className={classes.icons} /> state :{" "}
-                        {CuOrder.state}
+                        {CuOrder.state} 
                       </p>
                     </Typography>
                     {/* ))} */}
@@ -323,7 +332,10 @@ export default function ComplexGrid2() {
                     fontSize: "25px"
                   }}
                 >
-                  <p>$ {CuOrders.price}</p>
+                  <p>
+                        {" "}
+                       $ {CuOrders.price}
+                  </p>
                   {/* price */}
                 </Typography>
               </Grid>

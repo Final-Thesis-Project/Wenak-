@@ -45,7 +45,7 @@ const App: React.FC = () => {
     {/* <NavBar /> */}
     {/* <DrawerIcon /> */}
     <main></main>
-    {/* <Route exact path={"/NavbarUser"} component={NavbarUser} /> */}
+     <Route exact path={"/NavbarUser"} component={NavbarUser} /> 
     <Route exact path={"/DrawerIcon"} component={DrawerIcon} />
      <Route exact path={"/LoginForm"} component={LoginForm}/>
     <Route

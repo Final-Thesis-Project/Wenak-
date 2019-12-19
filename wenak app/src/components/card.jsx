@@ -14,10 +14,29 @@ import BeenhereIcon from "@material-ui/icons/Beenhere";
 import ScheduleIcon from "@material-ui/icons/Schedule";
 import DoneIcon from "@material-ui/icons/Done";
 import VisibilityIcon from "@material-ui/icons/Visibility";
+import Modal from 'react-awesome-modal';
 import axios from "axios";
+import { withStyles } from '@material-ui/core/styles';
+import Dialog from '@material-ui/core/Dialog';
+import MuiDialogTitle from '@material-ui/core/DialogTitle';
+import MuiDialogContent from '@material-ui/core/DialogContent';
+import MuiDialogActions from '@material-ui/core/DialogActions';
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
+
+
+
+
+
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1
+  },
+  closeButton: {
+    position: 'absolute',
+    right: theme.spacing(1),
+    top: theme.spacing(1),
+    color: theme.palette.grey[500],
   },
   paper: {
     padding: theme.spacing(2),
@@ -80,10 +99,14 @@ const useStyles = makeStyles(theme => ({
     marginLeft: "15px"
   }
 }));
+
+
 export default function ComplexGrid() {
+  
   const classes = useStyles();
   const [orders, setOrder] = React.useState([]);
   const [userId, setUserId] = React.useState("");
+  
   //   const [state, setState] = useState((order.state: "onway"));
   const [reciver_name, setReciver_name] = useState([]);
   //   const pending = "pending";
@@ -128,30 +151,7 @@ export default function ComplexGrid() {
         console.log("error accept the order", err);
       });
   };
-  // const handleAccept = event => {
-  //   set(event.target.value);
-  // };
-  // const handleAccept = event => {
-  //   const orderId = orders._id;
-  //   console.log(orderId)
-  //   $.ajax({
-  //     url: "/api/customer/send_order",
-  //     headers: {
-  //       "x-access-token": localStorage.getItem("usertoken")
-  //     },
-  //     type: "POST",
-  //     data: { _id: orderId },
-  //     datatype: "json",
-  //     success: function() {
-  //       console.log("The order has accepted");
-  //       alert("accept the order  successfully");
-  //     },
-  //     error: function() {
-  //       console.log("error in order");
-  //       alert("Error in  accept sending");
-  //     }
-  //   });
-  // };
+
   return (
     <div className={classes.root}>
       {orders.map(order => (
@@ -269,4 +269,4 @@ export default function ComplexGrid() {
     </div>
   );
 }
-//
+

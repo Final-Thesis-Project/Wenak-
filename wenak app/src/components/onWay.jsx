@@ -175,7 +175,7 @@ export default function ComplexGrid3() {
                     {/* {orders.map(order => ( */}
                     <Typography variant="body2" gutterBottom>
                       <p>
-                        <LocationOnIcon className={classes.icons} /> Location :{" "}
+                        <LocationOnIcon className={classes.icons} /> Order Details :{" "}
                         {order.order_details}
                       </p>
                     </Typography>
