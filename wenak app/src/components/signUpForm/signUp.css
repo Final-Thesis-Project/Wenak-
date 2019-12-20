@@ -1,16 +1,39 @@
 .signUp {
-  margin-top: 4rem;
+  /* margin-top: 4rem; */
   text-align: center;
   /* align-items: center;
   align-self: center;
   align-content: center; */
 }
-
+.signUp1 {
+  /* margin-top: 4rem; */
+  text-align: center;
+  font-family: cairo;
+  margin-top: 2% !important;
+  margin-bottom: 2% !important;
+  position: relative !important;
+  max-width: 450px !important;
+  /* background: #fff !important; */
+  -webkit-box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15) !important;
+  box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15) !important;
+  margin: 10% 37% !important;
+  /* margin-bottom: 2%; */
+  padding: 14px !important;
+  border-radius: 0.28571429rem !important;
+  border: 1px solid rgba(34, 36, 38, 0.15) !important;
+  background-color: #aed581 !important;
+  font-family: cairo !important;
+  /* align-items: center;
+  align-self: center;
+  align-content: center; */
+}
 .Radio {
+  margin-top: 1px !important;
   text-align: center;
   align-items: center;
   align-content: center;
   align-self: center;
+  font-family: cairo;
 }
 
 .MuiFormGroup-row {
@@ -18,4 +41,96 @@
 }
 .conti {
   background-color: #aed581;
+}
+
+.signForm {
+  position: relative !important;
+  max-width: 450px !important;
+  /* background: #fff !important; */
+  -webkit-box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15) !important;
+  box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15) !important;
+  margin: 10% 37% !important;
+
+  padding: 14px !important;
+  border-radius: 0.28571429rem !important;
+  border: 1px solid rgba(34, 36, 38, 0.15) !important;
+  background-color: #ffffff !important;
+  font-family: cairo !important;
+}
+.signForm1 {
+  position: relative !important;
+  max-width: 450px !important;
+  /* background: #fff !important; */
+  -webkit-box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15) !important;
+  box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15) !important;
+  margin: 10% 37% !important;
+  margin-bottom: 2%;
+  padding: 14px !important;
+  border-radius: 0.28571429rem !important;
+  border: 1px solid rgba(34, 36, 38, 0.15) !important;
+  background-color: #ffffff !important;
+  font-family: cairo !important;
+}
+.signbut {
+  cursor: pointer !important;
+  display: inline-block !important;
+  min-height: 1em !important;
+
+  outline: 0;
+  border: none;
+  vertical-align: baseline !important;
+  background-color: #aed581 !important;
+  color: #ffffff !important;
+  font-family: Lato, "Helvetica Neue", Arial, Helvetica, sans-serif !important;
+  margin: 0 0.25em 0 0 !important;
+  padding: 0.78571429em 1.5em 0.78571429em !important;
+  text-transform: none !important;
+  text-shadow: none !important;
+  font-weight: 700 !important;
+  line-height: 1em !important;
+  font-style: normal !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  border-radius: 0.28571429rem !important;
+  font-family: cairo !important;
+  /* box-shadow: 0 0 0 1px transparent inset, 0 0 0 0 rgba(34, 36, 38, 0.15) inset !important; */
+}
+.inputSign {
+  /* box-shadow: 0 0 0 100px ivory inset!important; */
+  /* border-color: #e5dfa1!important; */
+  /* padding-left: 2.67142857em!important; */
+  padding-right: 1em !important;
+}
+
+.signbut2 {
+  cursor: pointer !important;
+  display: inline-block !important;
+  min-height: 1em !important;
+  outline: 0;
+  border: none;
+  vertical-align: baseline !important;
+  background-color: #aed581 !important;
+  color: #ffffff !important;
+  font-family: Lato, "Helvetica Neue", Arial, Helvetica, sans-serif !important;
+  margin: 0 0.25em 0 0 !important;
+  margin-top: 1% !important;
+  padding: 0.78571429em 1.5em 0.78571429em !important;
+  text-transform: none !important;
+  text-shadow: none !important;
+  font-weight: 700 !important;
+  line-height: 1em !important;
+  font-style: normal !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  border-radius: 0.28571429rem !important;
+  font-family: cairo !important;
+  max-width: 12% !important;
+  /* box-shadow: 0 0 0 1px transparent inset, 0 0 0 0 rgba(34, 36, 38, 0.15) inset !important; */
+}
+.backConfirm {
+  color: #ffffff !important;
+  background-color: #2f2e2e !important;
+  max-height: 2% !important;
+  height: 6% !important;
+  width: 7% !important;
 }

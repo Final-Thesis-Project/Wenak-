@@ -1,13 +1,10 @@
 // //Screen 5
 
-
 // import React, { Component } from 'react'
 // import { Form, Button, Rating, Container, Grid, Header, Icon, Image, Item, Label, Menu, Segment, Step, Table, } from 'semantic-ui-react'
 // import Logo from '../assets/logo.png'
 // import $ from 'jquery';
 // import './components.css'
-
-
 
 // const style = {
 //     h1: {
@@ -65,7 +62,6 @@
 
 //             <div className="surrentOrder">
 
-
 //                 <Header as='h3' content='Your Orders' style={style.h3} textAlign='center' />
 
 //                 {/* <Button animated>
@@ -83,7 +79,7 @@
 //                 <Button color='yellow' size='large'>
 //                     Cancel
 //                 </Button> */}
-                
+
 //                 <Image src={Logo} size='small' textAlign='center'/>
 
 //                 <Container fluid>
@@ -118,14 +114,13 @@
 //               <Header as='h2'>Completed Order</Header>
 //               </Segment> */}
 //             </Form>
-            
+
 //             </div>
 //         )
 //     }
 // }
 
 // export default CurrentOrders
-
 
 //----------------------------- Ola----------------------------------
 // import React from "react";
@@ -180,35 +175,28 @@ const useStyles = makeStyles(theme => ({
     maxWidth: "auto",
     maxHeight: "auto"
   },
-  accept: {
+  view: {
     color: "#FFFFFF",
-    backgroundColor: "#4caf50",
+    backgroundColor: "#4CAF50",
     width: "130px",
     height: " 40px"
   },
-  view: {
+  reject: {
     color: "#FFFFFF",
-    backgroundColor: "#cddc39",
-    width: "130px",
-    height: " 40px"
+    backgroundColor: "#E53935"
   },
   details: {
     padding: "10px",
     marginTop: "15px"
   },
   icons: {
-    color: "#bdbdbd",
+    color: "#BDBDBD",
     marginRight: "9px",
     marginTop: "5px"
   },
   orderDetails: {
     //   padding:"",
     marginBottom: "5px"
-  },
-  iconTab: {
-    color: "#fafafa",
-    textAlign: "right",
-    marginLeft: "15px"
   }
 }));
 
@@ -218,20 +206,26 @@ export default function ComplexGrid2() {
   const [userId, setUserId] = React.useState("");
   const [reciver_name, setReciver_name] = useState([]);
 
-
   ///------------------------ Get pending Orders ------------------------------------
   useEffect(() => {
     document.title = ` Customers Orders`;
-    console.log("I'm inside use effect")
+    console.log("I'm inside use effect");
     axios
-      .get(`/api/customer/get_current_order`,
-      {headers: {"x-access-token": localStorage.getItem("usertoken")}})
+      .get(`/api/customer/get_current_order`, {
+        headers: { "x-access-token": localStorage.getItem("usertoken") }
+      })
       .then(res => {
         setCuOrders(res.data);
-        console.log("I'm inside axios to get current_order customer orders", res.data);
+        console.log(
+          "I'm inside axios to get current_order customer orders",
+          res.data
+        );
       })
       .catch(err => {
-        console.log("I'm error inside axios to get current_order customer orders", err);
+        console.log(
+          "I'm error inside axios to get current_order customer orders",
+          err
+        );
       });
   }, []);
   return (
@@ -254,7 +248,6 @@ export default function ComplexGrid2() {
                   <div className={classes.orderDetails}>
                     <Typography gutterBottom variant="subtitle1">
                       <p>
-                        {" "}
                         <PersonIcon className={classes.icons} />
                         OrderId: {CuOrder._id}
                       </p>
@@ -287,15 +280,12 @@ export default function ComplexGrid2() {
                     {/* {orders.map(order => ( */}
                     <Typography variant="body2">
                       <p>
-                        <BeenhereIcon className={classes.icons} /> state :{" "}
+                        <BeenhereIcon className={classes.icons} /> state :
                         {CuOrder.state}
                       </p>
                     </Typography>
-                    {/* ))} */}
                   </div>
                   <div className={classes.orderDetails}>
-
-                  
                     <Typography variant="body2">
                       {/* <DirectionsBikeIcon /> */}
                     </Typography>
@@ -328,8 +318,6 @@ export default function ComplexGrid2() {
                 </Typography>
               </Grid>
               {/* </div> */}
-
-              
             </div>
           </Grid>
         </Paper>

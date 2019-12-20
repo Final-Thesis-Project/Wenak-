@@ -100,27 +100,6 @@ class Completion extends React.Component {
       }
     });
   }
-  //     axios
-  //     .post(
-  //       `/api/customer/send_order`,
-  //       {data: data},
-  //       {
-  //         headers: {
-  //           'Content-Type': 'application/json',
-  //           "x-access-token": localStorage.getItem("usertoken")
-  //         }
-  //       }
-  //     )
-  //     .then(res => {
-  //       console.log("The order has sent successfully");
-  //       alert("The order sent successfully");
-  //     })
-  //     .catch(err => {
-  //       console.log("error in order");
-  //       alert("Error in order sending");
-  //     });
-  // };
-
   render() {
     return (
       <div>
@@ -170,22 +149,7 @@ class Completion extends React.Component {
                 type="text"
                 placeholder="Reciever's Phone"
               ></input>
-              {/* <Header className="header1"
-              as="h3"
-              content="Assign The Reciever's Location"
-              style={style.h3}
-              textAlign="left"
-            /> */}
-
-              {/* <div className="trial">
-              <Trial
-                google={this.props.google}
-                center={{ lat: 31.9478, lng: 35.2296 }}
-                height='450px'
-                width="900px"
-                zoom={7}
-              />
-            </div> */}
+             
             </Grid.Column>
           </div>
           <Grid.Column computer={9} mobile={6} tablet={3}>
@@ -202,9 +166,7 @@ class Completion extends React.Component {
             ></input>
           </Grid.Column>
 
-          {/* <Button  onClick={this.handleSend.bind(this)} className="butSend" color='yellow' size='large'>
-            Send Your Order
-          </Button>  */}
+   
           <Button variant="contained" onClick={this.continue}>
             Continue
           </Button>

@@ -54,37 +54,39 @@ export class SenderLocation extends Component {
     return (
       <React.Fragment>
         <Header as="h2" size="medium" color="grey" textAlign="center">
-          Assign your DropOff point
+          {/* Assign your DropOff point
+           */}
+          Assign your PickUp point
         </Header>
         <Home handleClick={this.handleClick.bind(this)} />
-        ,
-        <TextField
-          className="contino"
-          hintText="Enter The location_start_lng"
-          floatingLabelText="location_start_lng"
-          onChange={handleChange("location_start_lng")}
-          defaultValue={values.location_start_lng}
-          value={this.state.data["newLng"]}
-        />
-        <br />
-        <br />
-        <TextField
-          className="contino"
-          hintText="location_start_lat"
-          floatingLabelText="location_start_lat"
-          onChange={handleChange("location_start_lat")}
-          defaultValue={values.location_start_lat}
-          value={this.state.data["newLat"]}
-        />
-        <br />
-        <Button
-          className="accept"
-          color="primary"
-          variant="contained"
-          onClick={this.continue}
-        >
-          Continue
-        </Button>
+        <div className="lat">
+          <TextField
+            className="contino"
+            hintText="Enter The location_start_lng"
+            floatingLabelText="location_start_lng"
+            onChange={handleChange("location_start_lng")}
+            defaultValue={values.location_start_lng}
+            value={this.state.data["newLng"]}
+          />
+          <TextField
+            // className="contino"
+            hintText="location_start_lat"
+            floatingLabelText="location_start_lat"
+            onChange={handleChange("location_start_lat")}
+            defaultValue={values.location_start_lat}
+            value={this.state.data["newLat"]}
+          />
+        </div>
+        <div>
+          <Button
+            className="accept"
+            color="primary"
+            variant="contained"
+            onClick={this.continue}
+          >
+            Continue
+          </Button>
+        </div>
       </React.Fragment>
     );
   }

@@ -5,7 +5,7 @@ import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 // import AppBar from 'material-ui/AppBar';
 import TextField from "material-ui/TextField";
 import RaisedButton from "material-ui/RaisedButton";
-//
+import { Button } from "semantic-ui-react";
 import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -27,63 +27,71 @@ export class FormUserDetails extends Component {
         <NavBar />
         <div className="signUp">
           <MuiThemeProvider>
-            <React.Fragment>
-              {/* <AppBar title="Enter User Details"/> */}
-              <TextField
-                hintText="Enter Your Mobile Number"
-                floatingLabelText="Mobile"
-                onChange={handleChange("mobile")}
-                defaultValue={values.mobile}
-              />
-              <br />
-              <TextField
-                hintText="Enter Your Name"
-                floatingLabelText="Name"
-                onChange={handleChange("name")}
-                defaultValue={values.name}
-              />
-              <br />
-              <TextField
-                hintText="Enter Password"
-                floatingLabelText="Password"
-                type="password"
-                onChange={handleChange("password")}
-                defaultValue={values.password}
-              />
-              <br />
-              <div className="signUp">
-                <RadioGroup
-                  className="radio"
-                  aria-label="position"
-                  name="position"
-                  defaultValue={values.userType}
-                  onChange={handleChange("userType")}
-                  row
-                >
-                  <FormControlLabel
-                    value="Driver"
-                    control={<Radio color="primary" />}
-                    label="Driver"
-                    labelPlacement="start"
-                  />
-                  <FormControlLabel
-                    value="Customer"
-                    control={<Radio color="primary" />}
-                    label="Customer"
-                    labelPlacement="start"
-                  />
-                </RadioGroup>
-              </div>
+            <div className="signForm">
+              <React.Fragment>
+                {/* <AppBar title="Enter User Details"/> */}
 
-              <br />
-              <RaisedButton
-                className="conti"
-                label="Continue"
-                primary={true}
-                style={styles.button}
-                onClick={this.continue}
-              />
-            </React.Fragment>
+                <TextField
+                  className=" inputSign"
+                  hintText="Enter Your Mobile Number"
+                  // floatingLabelText="Mobile"
+                  onChange={handleChange("mobile")}
+                  defaultValue={values.mobile}
+                />
+                <br />
+                <TextField
+                  className=" inputSign"
+                  hintText="Enter Your Username"
+                  // floatingLabelText="Name"
+                  onChange={handleChange("name")}
+                  defaultValue={values.name}
+                />
+                <br />
+                <TextField
+                  className=" inputSign"
+                  // floatingLabelText="Password"
+                  hintText="Enter password"
+                  type="password"
+                  onChange={handleChange("password")}
+                  defaultValue={values.password}
+                />
+                <br />
+                <div className="signUp">
+                  <RadioGroup
+                    className="radio"
+                    aria-label="position"
+                    name="position"
+                    defaultValue={values.userType}
+                    onChange={handleChange("userType")}
+                    row
+                  >
+                    <FormControlLabel
+                      value="Driver"
+                      control={<Radio color="primary" />}
+                      label="Driver"
+                      labelPlacement="start"
+                    />
+                    <FormControlLabel
+                      value="Customer"
+                      control={<Radio color="primary" />}
+                      label="Customer"
+                      labelPlacement="start"
+                    />
+                  </RadioGroup>
+                </div>
+                <br />
+                <Button
+                  // className="butLog"
+                  className="signbut"
+                  fluid
+                  size="large"
+                  type="submit"
+                  onClick={this.continue}
+                >
+                  Continue
+                </Button>
+              </React.Fragment>
+            </div>
           </MuiThemeProvider>
         </div>
       </div>

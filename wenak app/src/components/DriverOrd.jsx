@@ -17,8 +17,7 @@ import NestedGrid from "./NewOrder";
 import NestedGrid2 from "./historyCard";
 // import NestedGrid3 from "./onwayCard";
 
-import Toolbar2 from './Toolbar/Toolbar2';
-
+import Toolbar2 from "./Toolbar/Toolbar2";
 
 import NestedGrid3 from "./onwayCard";
 
@@ -69,21 +68,21 @@ const useStyles = makeStyles(theme => ({
     textAlign: "center"
   },
   tab: {
-    indicatorColor: "#FFCA28",
+    indicatorColor: "#FFfff",
+    fontFamily: "cairo",
     fontSize: "14px",
     textColor: "#212121",
-    marginLeft: "50px",
+    marginLeft: "138px",
     marginRight: "50px",
     textAlign: "center",
+    fontWeight: "bold",
     // paddingLeft: "20px",
     width: "1000px"
   },
   navcolor: {
-
-    backgroundColor: "#FFC400"
-  },
-
-   
+    backgroundColor: "#dbe62c;",
+    borderRadius: "10px"
+  }
 }));
 
 export default function ScrollableTabsButtonForce() {
@@ -96,68 +95,68 @@ export default function ScrollableTabsButtonForce() {
 
   return (
     <div>
-    <div>
-      <Toolbar2 />
+      <div>
+        <Toolbar2 />
       </div>
-    <div className={classes.root}>
-      <AppBar
-        className={classes.navcolor}
-        position="relative"
-        color="default"
-        backgroundColor=" #d4e157"
-      >
-        <div>
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            variant="scrollable"
-            scrollButtons="on"
-            indicatorColor="primary"
-            textColor="primary"
-            aria-label="scrollable force tabs example"
-          >
-            <Tab
-              className={classes.tab}
-              label="New"
-              icon={
-                <FiberNewIcon fontSize="large" className={classes.iconTab} />
-              }
-              {...a11yProps(0)}
-            />
-            <Tab
-              className={classes.tab}
-              label="OnWay"
-              icon={
-                <DirectionsBikeIcon
-                  fontSize="large"
-                  className={classes.iconTab}
-                />
-              }
-              {...a11yProps(1)}
-            />
-            <Tab
-              className={classes.tab}
-              label="History"
-              icon={
-                <RestoreIcon fontSize="large" className={classes.iconTab} />
-              }
-              {...a11yProps(2)}
-            />
-          </Tabs>
-        </div>
-      </AppBar>
-      <TabPanel value={value} index={0}>
-        {/* new Orders form customers pending status */}
-        <NestedGrid font />
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        <NestedGrid3 />
-        {/* ola Mhanna */}
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        <NestedGrid2 />
-      </TabPanel>
-    </div>
+      <div className={classes.root}>
+        <AppBar
+          className={classes.navcolor}
+          position="relative"
+          color="default"
+          backgroundColor=" #d4e157"
+        >
+          <div>
+            <Tabs
+              value={value}
+              onChange={handleChange}
+              variant="scrollable"
+              scrollButtons="on"
+              indicatorColor="primary"
+              textColor="primary"
+              aria-label="scrollable force tabs example"
+            >
+              <Tab
+                className={classes.tab}
+                label="New"
+                icon={
+                  <FiberNewIcon fontSize="large" className={classes.iconTab} />
+                }
+                {...a11yProps(0)}
+              />
+              <Tab
+                className={classes.tab}
+                label="OnWay"
+                icon={
+                  <DirectionsBikeIcon
+                    fontSize="large"
+                    className={classes.iconTab}
+                  />
+                }
+                {...a11yProps(1)}
+              />
+              <Tab
+                className={classes.tab}
+                label="History"
+                icon={
+                  <RestoreIcon fontSize="large" className={classes.iconTab} />
+                }
+                {...a11yProps(2)}
+              />
+            </Tabs>
+          </div>
+        </AppBar>
+        <TabPanel value={value} index={0}>
+          {/* new Orders form customers pending status */}
+          <NestedGrid font />
+        </TabPanel>
+        <TabPanel value={value} index={1}>
+          <NestedGrid3 />
+          {/* ola Mhanna */}
+        </TabPanel>
+        <TabPanel value={value} index={2}>
+          <NestedGrid2 />
+        </TabPanel>
+      </div>
     </div>
   );
 }
