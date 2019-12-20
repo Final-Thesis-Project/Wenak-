@@ -25,11 +25,16 @@ app.use('/notifi', notifications);
 const twilio = require('./twilioServer.js');
 app.use('/twilio', twilio);
 const payment = require('./payment.js');
-app.use('/payment', payment);
-module.exports = app;
-app.get('/', function (req, res) {
-    res.send('Hello world');
-});
+// app.use('/payment', payment);
+// module.exports = app;
+// app.get('/', function (req, res) {
+//     res.send('Hello world');
+// });
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("build"));
+    const path = require("path");
+    app.get("*", (req, res) => {
+      res.sendFile(path.resolve(__dirname, "build", "index.html"));
+    });
+  }
 app.listen(process.env.PORT || 4000);
-console.log("Partying on port", 4000);
-//# sourceMappingURL=server.js.map
