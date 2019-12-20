@@ -12,10 +12,11 @@ import PhoneIcon from "@material-ui/icons/Phone";
 import MenuIcon from "@material-ui/icons/Menu";
 import { Link } from "react-router-dom";
 import InfoIcon from "@material-ui/icons/Info";
+import HomeIcon from '@material-ui/icons/Home';
 
 const useStyles = makeStyles({
   list: {
-    width: 250
+    width: 200
   },
   fullList: {
     width: "auto"
@@ -49,7 +50,28 @@ export default function DrawerIcon() {
       role="presentation"
       onClick={toggleDrawer(side, false)}
       onKeyDown={toggleDrawer(side, false)}
-    >
+        >
+          <br/>
+         
+          <Link to={"/"}>
+        <List className="sidIcon">
+          {["Home Page"].map((text, index) => (
+            <ListItem className="sidIcon" button key={text}>
+              <ListItemIcon className="sidIcon">
+                {index % 2 === 0 ? <HomeIcon /> : <HomeIcon />}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
+        </List>
+      </Link>
+      
+      <br/>
+
+      <Divider />
+      
+      <br/>
+
       <Link to={"/Settings"}>
         <List className="sidIcon">
           {["Settings"].map((text, index) => (
@@ -63,7 +85,6 @@ export default function DrawerIcon() {
         </List>
       </Link>
 
-      <Divider />
 
       <Link to={"/About"}>
         <List>
@@ -84,7 +105,6 @@ export default function DrawerIcon() {
         </List>
       </Link>
 
-      <Divider />
 
       <Link to={"/ContactForm"}>
         <List>
@@ -108,6 +128,20 @@ export default function DrawerIcon() {
       onClick={toggleDrawer(side, false)}
       onKeyDown={toggleDrawer(side, false)}
     >
+      <Link to={"/"}>
+        <List className="sidIcon">
+          {["Home Page"].map((text, index) => (
+            <ListItem className="sidIcon" button key={text}>
+              <ListItemIcon className="sidIcon">
+                {index % 2 === 0 ? <HomeIcon /> : <HomeIcon />}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
+        </List>
+      </Link>
+      <Divider />
+
       <Link to={"/Settings"}>
         <List>
           {["Settings"].map((text, index) => (
@@ -121,7 +155,6 @@ export default function DrawerIcon() {
         </List>
       </Link>
 
-      <Divider />
 
       <Link to={"/About"}>
         <List>
@@ -142,7 +175,6 @@ export default function DrawerIcon() {
         </List>
       </Link>
 
-      <Divider />
 
       <Link to={"/ContactForm"}>
         <List>

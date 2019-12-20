@@ -289,12 +289,22 @@ const HomepageLayout = () => (
             <Grid.Column width={3} style={{ marginLeft: "200px" }}>
               <Header className="footer" inverted as="h4" content="About" />
               <List link inverted>
+
+              
+             
+              <Link to="/About">
                 <List.Item className="footer" as="a">
                   About
                 </List.Item>
+                </Link>
+                <br/>
+                
+
+                <Link to="/ContactForm">
                 <List.Item className="footer" as="a">
                   Contact Us
                 </List.Item>
+                </Link>
                 {/* <List.Item as="a">Religious Ceremonies</List.Item> */}
                 {/* <List.Item as="a">Gazebo Plans</List.Item> */}
               </List>
