@@ -6,6 +6,7 @@ class CheckoutForm extends Component {
     super(props);
     this.state = {complete: false};
     this.submit = this.submit.bind(this);
+    this.paycash = this.paycash.bind(this);
   }
 
   async submit(ev) {
@@ -18,10 +19,14 @@ class CheckoutForm extends Component {
     });
 
     if (response.ok) this.setState({complete: true});
-}
+  }
+
+  paycash() {
+    this.setState({complete: true});
+  }
 
   render() {
-    if (this.state.complete) return <h1>Purchase Complete</h1>;
+    if (this.state.complete) return <h1>Payment Completed</h1>;
 
     return (
       <div className="checkout">
@@ -29,6 +34,8 @@ class CheckoutForm extends Component {
         <CardElement hidePostalCode={true} />
         {/* <CardElement /> */}
         <button onClick={this.submit}>Pay now</button>
+        <p>Or pay with Cash?</p>
+        <button onClick={this.paycash}>Pay Cash</button>
       </div>
     );
   }
