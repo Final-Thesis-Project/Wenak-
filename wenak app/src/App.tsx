@@ -66,6 +66,7 @@ const App: React.FC = () => {
         <Route exact path={"/SendOrder"} component={SendOrder} />
 
         <Route exact path={"/NavbarUser"} component={NavbarUser} />
+        <Route exact path={"/Checkout"} component={Checkout} />
         {/* <Profile />
     <DriverOrders /> */}
       </div>
