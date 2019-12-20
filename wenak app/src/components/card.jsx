@@ -8,14 +8,17 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import ButtonBase from "@material-ui/core/ButtonBase";
 import PersonIcon from "@material-ui/icons/Person";
+import GoogleMapReact from 'google-map-react';
 // import DirectionsBikeIcon from "@material-ui/icons/DirectionsBike";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import BeenhereIcon from "@material-ui/icons/Beenhere";
 import ScheduleIcon from "@material-ui/icons/Schedule";
+import { Link } from "react-router-dom";
 import DoneIcon from "@material-ui/icons/Done";
 import VisibilityIcon from "@material-ui/icons/Visibility";
 import Modal from 'react-awesome-modal';
 import axios from "axios";
+
 import { withStyles } from '@material-ui/core/styles';
 import Dialog from '@material-ui/core/Dialog';
 import MuiDialogTitle from '@material-ui/core/DialogTitle';
@@ -100,7 +103,6 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-
 export default function ComplexGrid() {
   
   const classes = useStyles();
@@ -126,6 +128,22 @@ export default function ComplexGrid() {
         console.log("I'm error inside axios to get pendding orders", err);
       });
   }, []);
+
+  // const converttoaddress = (lat,lng) =>{
+  //   const google = window.google;
+  //   var address ="";
+  //   var latlng = new google.maps.LatLng(lat, lng);
+  //   var geocoder = geocoder = new google.maps.Geocoder();
+  //   geocoder.geocode({ 'latLng': latlng }, function (results, status) {
+  //       if (status == google.maps.GeocoderStatus.OK) {
+  //           if (results[1]) {
+  //               alert("Location: " + results[1].formatted_address);
+  //               address += results[1].formatted_address
+  //           }
+  //       }
+  //   });
+  //    return address;
+  // }
   ///------------------------ Accept pending Orders ------------------------------------
   const handleAccept = id => {
     // useEffect(() => {
@@ -143,14 +161,23 @@ export default function ComplexGrid() {
         }
       )
       .then(res => {
-        // console.log(res.data);
-        // setOrder(res.data);
+
         console.log("accept the order", orderId);
       })
       .catch(err => {
         console.log("error accept the order", err);
       });
   };
+
+  const componentDidMount= ()=> {
+    const script = document.createElement("script");
+  
+    script.src = "http://maps.googleapis.com/maps/api/js?sensor=false";
+    script.async = true;
+  
+    document.body.appendChild(script);
+  }
+  
 
   return (
     <div className={classes.root}>
@@ -199,6 +226,14 @@ export default function ComplexGrid() {
                     </Typography>
                     {/* ))} */}
                   </div>
+                  {/* <div className={classes.orderDetails}>
+                    <Typography variant="body2">
+                      <p>
+                        <ScheduleIcon className={classes.icons} /> Address:
+                        {converttoaddress(order.location_start_lat,order.location_start_lng) }
+                      </p>
+                    </Typography>
+                  </div> */}
                   <div className={classes.orderDetails}>
                     {/* {orders.map(order => ( */}
                     <Typography variant="body2">
@@ -252,6 +287,7 @@ export default function ComplexGrid() {
                 >
                   Accept <DoneIcon className={classes.iconTab} />
                 </Button>
+                <Link to={"/viewOrder"}>
                 <Button
                   className={classes.view}
                   variant="contained"
@@ -260,7 +296,7 @@ export default function ComplexGrid() {
                 >
                   View <VisibilityIcon className={classes.iconTab} />
                 </Button>
-              
+              </Link>
               </div>
             </div>
           </Grid>

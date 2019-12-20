@@ -25,6 +25,7 @@ import ContactForm from './components/contactForm/ContactForm';
 import Trial from './components/Trial';
 import Splash from './components/splash/Splash';
 import Checkout from './components/Checkout';
+import viewOrder from './components/viewOrder';
 import SendOrder from './components/sendOrder/SendOrder'
 
 const App: React.FC = () => {
@@ -68,7 +69,7 @@ const App: React.FC = () => {
     <Route exact path={"/Profile"} component={Profile} />
     <Route exact path={"/Toolbar2"} component={Toolbar2} />
     <Route exact path={"/SendOrder"} component={SendOrder} />
-
+    <Route exact path={"/viewOrder"} component={viewOrder} />
 
 
   
