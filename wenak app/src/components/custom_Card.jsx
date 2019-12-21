@@ -88,7 +88,7 @@ export default function CustomGrid() {
   const [userId, setUserId] = React.useState("");
   //   const [state, setState] = useState((order.state: "onway"));
   const [reciver_name, setReciver_name] = useState([]);
-  handleRate = (e, { rating, maxRating }) =>
+   const handleRate = (e, { rating, maxRating }) =>
     this.setState({ rating, maxRating })
   //   const pending = "pending";
   //   const onWay = "onWay";
@@ -198,9 +198,9 @@ export default function CustomGrid() {
                     marginRight: "26px",
                     fontSize: "25px"
                   }}
-                >
-                  <p>$ {order.price}</p>
-                  {order.price}
+                >{order.price}
+                  <p> </p>
+               
                 </Typography>
               </Grid>
               {/* </div> */}
@@ -211,7 +211,7 @@ export default function CustomGrid() {
                   variant="contained"
                   color="#4caf50"
                   // onSubmit={this.handleSubmit}
-                  onClick={() => handleAccept(order._id)}
+                  // onClick={() => handleAccept(order._id)}
                 >
                   Accept <DoneIcon className={classes.iconTab} />
                 </Button>
