@@ -305,6 +305,7 @@ export default function ComplexGrid() {
                   className={classes.view}
                   variant="contained"
                   color="#CDDC39"
+                  
                   onClick={sendLocation(order.location_start_lat,order.location_start_lng)}
                 >
                   View <VisibilityIcon className={classes.iconTab} />
