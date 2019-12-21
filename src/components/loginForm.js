@@ -91,7 +91,7 @@ class LoginForm extends Component {
           verticalAlign="middle"
         >
           <Grid.Column style={{ maxWidth: 450 }}>
-            <Image className="logoSize" src={Logo2} />{" "}
+            <Image className="logoSize2" src={Logo2} />{" "}
             <Header as="h2" className="loginTitle" textAlign="center"></Header>
             <div>Login to your account </div>
             <Form size="large">

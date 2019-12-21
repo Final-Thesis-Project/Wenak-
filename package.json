@@ -73,7 +73,7 @@
     "typescript": "3.7.2"
   },
   "scripts": {
-    "start": "node ./servers/server.js",
+    "start": "react-scripts start",
     "start-client": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
