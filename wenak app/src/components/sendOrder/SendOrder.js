@@ -45,8 +45,8 @@ export class SendOrder extends Component {
 
   render() {
     const { step } = this.state;
-    const { item,location_start_lng,location_start_lat,location_end_lng,location_end_lat,recieverName,recieverPhone,state,note} = this.state;
-    const values = {item,location_start_lng,location_start_lat,location_end_lng,location_end_lat,recieverName,recieverPhone,state,note};
+    const { item,location_start_lng,location_start_lat,location_end_lng,location_end_lat,recieverName,recieverPhone,state,note,price} = this.state;
+    const values = {item,location_start_lng,location_start_lat,location_end_lng,location_end_lat,recieverName,recieverPhone,state,note,price};
 
     switch (step) {
       case 1:

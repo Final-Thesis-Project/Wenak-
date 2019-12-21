@@ -1,5 +1,4 @@
 
-
 import React, { Component } from 'react'
 import { GoogleMap, withScriptjs, withGoogleMap, InfoWindow, Marker } from 'react-google-maps';
 import Geocode from "react-geocode"
@@ -251,9 +250,10 @@ class Trial extends Component{
 		const AsyncMap = withScriptjs(
 			withGoogleMap(
 				props => (
+          
 					<GoogleMap className="mapStyle"  google={ this.props.google }
-					           defaultZoom={ this.props.zoom }
-					           defaultCenter={{ lat: this.state.mapPosition.lat, lng: this.state.mapPosition.lng }}
+					defaultZoom={ this.props.zoom }
+					defaultCenter={{ lat: this.state.mapPosition.lat, lng: this.state.mapPosition.lng }}
 					>
 						{/* InfoWindow on top of marker */}
 						<InfoWindow
@@ -279,7 +279,8 @@ class Trial extends Component{
 								height: '40px',
 								paddingLeft: '16px',
 								marginTop: '2px',
-								marginBottom: '500px'
+                marginBottom: '500px',
+                
 							}}
 							onPlaceSelected={ this.onPlaceSelected }
 							types={['(regions)']}
@@ -292,16 +293,17 @@ class Trial extends Component{
 		if( this.props.center.lat !== undefined ) {
 			map = <div>
 				<div>
-					<div className="form-group"   className="formDetails" >
-						<label  className="mapLable" htmlFor="">City</label>
+     					<div className="form-group"   className="formDetails" >
+						<label  className="maplable1" htmlFor="">City</label>
                         <Input  className="mapInput" name="city" onChange={ this.onChange } readOnly="readOnly" value={ this.state.city }placeholder='City' />
-                		<label  className="mapLable" htmlFor="">Area</label>
+                		<label  className="maplable1" htmlFor="">Area</label>
                         <Input  className="mapInput" name="area" onChange={ this.onChange } readOnly="readOnly" value={ this.state.area } placeholder='Area' />
-                  		<label  className="mapLable" htmlFor="">State</label>
+                  		<label  className="maplable1" htmlFor="">State</label>
                         <Input className="mapInput"  name="state" onChange={ this.onChange } readOnly="readOnly" value={ this.state.state } placeholder='State' />
-                		<label  className="mapLable" htmlFor="">Address</label>
+                		<label  className="maplable1" htmlFor="">Address</label>
                         <Input  className="mapInput" name="address" onChange={ this.onChange } readOnly="readOnly" value={ this.state.address } placeholder='Address' />
                     </div>
+                    
 				</div>
 
 				<AsyncMap className="mapStyle"

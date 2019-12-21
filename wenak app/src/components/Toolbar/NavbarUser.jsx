@@ -17,16 +17,11 @@ import Box from "@material-ui/core/Box";
 import { textAlign } from "@material-ui/system";
 import { BrowserRouter, Route } from "react-router-dom";
 
-import Home from '../home';
-import SendOrder from '../sendOrder/SendOrder'
-import CurrentOrders from '../CurrentOrders';    
-import Orders from '../YourOrders';
-import Toolbar2 from './Toolbar2';
-
-
-
-
-
+import Home from "../home";
+import SendOrder from "../sendOrder/SendOrder";
+import CurrentOrders from "../CurrentOrders";
+import Orders from "../YourOrders";
+import Toolbar2 from "./Toolbar2";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -73,20 +68,19 @@ const useStyles = makeStyles(theme => ({
     indicatorColor: "#FFCA28",
     fontSize: "14px",
     textColor: "#212121",
-    marginLeft: "50px",
+    marginLeft: "180px",
     marginRight: "50px",
     textAlign: "center",
     // paddingLeft: "20px",
     width: "1000px"
   },
   navcolor: {
-    backgroundColor: "#FFC400"
+    backgroundColor: "#AED581"
   },
-colornav:{
-
-  backgroundColor: "#aed581",
-  borderRadius: "10px"
-}
+  colornav: {
+    backgroundColor: "#aed581",
+    borderRadius: "10px"
+  }
 }));
 
 export default function NavbarUser() {
@@ -96,68 +90,73 @@ export default function NavbarUser() {
     setValue(newValue);
   };
   return (
-      <BrowserRouter>
-          <Toolbar2 />
+    <BrowserRouter>
+      <Toolbar2 />
 
-    <div className={classes.root}>
-      <AppBar className={classes.colornav}  position="relative" color="default" backgroundColor=" #D4E157">
-        <div >
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            variant="scrollable"
-            scrollButtons="on"
-            indicatorColor="primary"
-            textColor="primary"
-            aria-label="scrollable force tabs example"
-          >
-            <Tab
-              className={classes.tab}
-              label="Order Now"
-              icon={
-                <FiberNewIcon fontSize="large" className={classes.iconTab} />
-              }
-              {...a11yProps(0)}
-            />
-            <Tab
-              className={classes.tab}
-              label="Current Order"
-              icon={
-                <DirectionsBikeIcon
-                  fontSize="large"
-                  className={classes.iconTab}
-                />
-              }
-              {...a11yProps(1)}
-            />
-            <Tab
-              className={classes.tab}
-              label="Previous Orders"
-              icon={
-                <RestoreIcon fontSize="large" className={classes.iconTab} />
-              }
-              {...a11yProps(2)}
-            />
-          </Tabs>
-        </div>
-      </AppBar>
-      <TabPanel value={value} index={0}>
-      <SendOrder/>
+      <div className={classes.root}>
+        <AppBar
+          className={classes.colornav}
+          position="relative"
+          color="default"
+          backgroundColor=" #D4E157"
+        >
+          <div>
+            <Tabs
+              value={value}
+              onChange={handleChange}
+              variant="scrollable"
+              scrollButtons="on"
+              indicatorColor="primary"
+              textColor="primary"
+              aria-label="scrollable force tabs example"
+            >
+              <Tab
+                className={classes.tab}
+                label="Order Now"
+                icon={
+                  <FiberNewIcon fontSize="large" className={classes.iconTab} />
+                }
+                {...a11yProps(0)}
+              />
+              <Tab
+                className={classes.tab}
+                label="Current Order"
+                icon={
+                  <DirectionsBikeIcon
+                    fontSize="large"
+                    className={classes.iconTab}
+                  />
+                }
+                {...a11yProps(1)}
+              />
+              <Tab
+                className={classes.tab}
+                label="Previous Orders"
+                icon={
+                  <RestoreIcon fontSize="large" className={classes.iconTab} />
+                }
+                {...a11yProps(2)}
+              />
+            </Tabs>
+          </div>
+        </AppBar>
+        <TabPanel value={value} index={0}>
+          <SendOrder />
 
-        {/* new Orders form customers pending status */}
-        {/* <NestedGrid font /> */}
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-      <CurrentOrders />
+          {/* new Orders form customers pending status */}
+          {/* <NestedGrid font /> */}
+        </TabPanel>
+        <TabPanel value={value} index={1}>
+          <CurrentOrders />
 
-        {/* <NestedGrid /> */}
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-      <Orders />
+          {/* <NestedGrid /> */}
+        </TabPanel>
+        <TabPanel value={value} index={2}>
+          <Orders />
 
-        {/* <NestedGrid /> */}
-      </TabPanel>
-    </div>
+          {/* <NestedGrid /> */}
+        </TabPanel>
+      </div>
     </BrowserRouter>
   );
 }

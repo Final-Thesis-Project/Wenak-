@@ -46,7 +46,7 @@ export class ConfirmPage extends Component {
        
 
     var distanceInMeters =this.getDistanceBetweenPoints(lat1,lang1,lat2,lang2);
-    var price = distanceInMeters *  0.001 * 3;
+    var price = Math.floor(distanceInMeters *  0.001 * .5);
     // PROCESS FORM //
     var data = {
       reciverName:this.props.values.recieverName,
@@ -77,6 +77,7 @@ export class ConfirmPage extends Component {
       success: function() {
         console.log("The order has sent successfully");
         alert("The order sent successfully");
+        window.location = "/Checkout";
       },
       error: function() {
         console.log("error in order");
@@ -129,7 +130,7 @@ export class ConfirmPage extends Component {
               <ListItemText primary="Additional details" secondary={note} /> 
             </ListItem>
             <ListItem>
-              <ListItemText primary="price" secondary={this.getDistanceBetweenPoints(location_start_lat,location_start_lng,location_end_lat,location_end_lng)*  0.001 * 3} /> 
+              <ListItemText primary="price" secondary={Math.floor(this.getDistanceBetweenPoints(location_start_lat,location_start_lng,location_end_lat,location_end_lng)*  0.001 * .5)} /> 
             </ListItem>
           </List>
           <br />

@@ -7,7 +7,7 @@ class Checkout extends Component {
         return (
             <StripeProvider apiKey="pk_test_2RMGhMNBYLV5H3NWsIv43AE900nJ66cJmb">
                 <div className="stripe-payment">
-                <h1>Pay with Stripe</h1>
+                <h1>Payment</h1>
                 <Elements>
                     <CheckoutForm />
                 </Elements>
