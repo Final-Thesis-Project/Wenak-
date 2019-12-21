@@ -132,7 +132,7 @@ class DesktopContainer extends Component {
                     <Button className="backButton" animated>
                       <Button.Content visible>Log In</Button.Content>
                       <Button.Content hidden>
-                        <Icon name="arrow right" />
+                        <Icon className="arrow" name="arrow right" />
                       </Button.Content>
                     </Button>
                   </Link>
