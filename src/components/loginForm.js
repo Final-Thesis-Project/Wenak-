@@ -10,7 +10,7 @@ import {
   Flag,
   Dropdown
 } from "semantic-ui-react";
-import Logo2 from "../assets/logo2.png";
+import Logo2 from "../assets/weenakUI-logo-17.png";
 import $ from "jquery";
 import { Link } from "react-router-dom";
 import NavBar from "./Toolbar/Toolbar";
@@ -67,7 +67,7 @@ class LoginForm extends Component {
         }
       },
       error: function(request, status, error) {
-        console.log("error in mobilenumor password");
+        console.log("error in mobile number or password");
         alert("Error in mobilenum or password");
       }
     });
@@ -91,9 +91,9 @@ class LoginForm extends Component {
           verticalAlign="middle"
         >
           <Grid.Column style={{ maxWidth: 450 }}>
-            <Header as="h2" className="loginTitle" textAlign="center">
-              <Image src={Logo2} /> <div>Login to your account </div>
-            </Header>
+            <Image className="logoSize" src={Logo2} />{" "}
+            <Header as="h2" className="loginTitle" textAlign="center"></Header>
+            <div>Login to your account </div>
             <Form size="large">
               {/* <Form size='large' onSubmit={this.handleSubmit}> */}
               <Segment stacked>

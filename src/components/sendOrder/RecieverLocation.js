@@ -4,6 +4,7 @@ import AppBar from "@material-ui/core/AppBar";
 import MuiThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import "../../App.css";
 import {
   Input,
   Container,
@@ -46,9 +47,6 @@ export class RecieverLocation extends Component {
     console.log("input values", values);
   }
   render() {
-    // var location_start_lat = this.props.lang_start_lat;
-    // var lang_start_lng=this.props.lang_start_lng;
-    // const values = {location_start_lat,lang_start_lng} =  this.props;
     const { values, handleChange } = this.props;
     return (
       <React.Fragment>
@@ -56,34 +54,34 @@ export class RecieverLocation extends Component {
           Assign your DropOff point
         </Header>
         <Home handleClick={this.handleClick.bind(this)} />
-        ,
-        <TextField
-          className="contino"
-          hintText="Enter The location_End_lng"
-          floatingLabelText="location_start_lng"
-          onChange={handleChange("location_end_lng")}
-          defaultValue={values.location_end_lng}
-          value={this.state.data["newLng"]}
-        />
-        <br />
-        <br />
-        <TextField
-          className="contino"
-          hintText="Enter the location_End_lat"
-          floatingLabelText="location_end_lat"
-          onChange={handleChange("location_end_lat")}
-          defaultValue={values.location_end_lat}
-          value={this.state.data["newLat"]}
-        />
-        <br />
-        <Button
-          className="accept"
-          color="primary"
-          variant="contained"
-          onClick={this.continue}
-        >
-          Continue
-        </Button>
+        <div className="lat">
+          <TextField
+            className="contino"
+            hintText="Enter The location_End_lng"
+            floatingLabelText="location_start_lng"
+            onChange={handleChange("location_end_lng")}
+            defaultValue={values.location_end_lng}
+            value={this.state.data["newLng"]}
+          />
+          <TextField
+            className="contino"
+            hintText="Enter the location_End_lat"
+            floatingLabelText="location_end_lat"
+            onChange={handleChange("location_end_lat")}
+            defaultValue={values.location_end_lat}
+            value={this.state.data["newLat"]}
+          />
+        </div>
+        <div>
+          <Button
+            className="accept"
+            color="primary"
+            variant="contained"
+            onClick={this.continue}
+          >
+            Continue
+          </Button>
+        </div>
       </React.Fragment>
     );
   }

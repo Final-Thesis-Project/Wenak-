@@ -57,9 +57,21 @@ const useStyles = makeStyles(theme => ({
     width: "130px",
     height: " 40px"
   },
+  acceptD: {
+    color: "#FFFFFF",
+    backgroundColor: "#aed581",
+    width: "130px",
+    height: " 40px"
+  },
   view: {
     color: "#FFFFFF",
     backgroundColor: "#CDDC39",
+    width: "130px",
+    height: " 40px"
+  },
+  viewD: {
+    color: "#FFFFFF",
+    backgroundColor: "#4a4c48",
     width: "130px",
     height: " 40px"
   },
@@ -106,7 +118,7 @@ export default function ComplexGrid3() {
       });
   }, []);
   // const fetchPosts = () => {
-   
+
   // };
   console.log("I’m inside current order axios", orders);
   // useEffect(() => {
@@ -204,7 +216,7 @@ export default function ComplexGrid3() {
               </Grid>
             </Grid>
             <div
-              style={{ float: "right", marginRight: "31px", fontSize: "39px"}}
+              style={{ float: "right", marginRight: "31px", fontSize: "39px" }}
             >
               <Grid item>
                 <Typography
@@ -220,7 +232,7 @@ export default function ComplexGrid3() {
               </Grid>
               <div className={classes.button1}>
                 <Button
-                  className={classes.accept}
+                  className={classes.acceptD}
                   variant="contained"
                   color="#4CAF50"
                   onClick={() => deliverOrder(order._id)}
@@ -228,7 +240,7 @@ export default function ComplexGrid3() {
                   Deliverd <DoneIcon className={classes.iconTab} />
                 </Button>
                 <Button
-                  className={classes.view}
+                  className={classes.viewD}
                   variant="contained"
                   color="#CDDC39"
                   // onClick={() => setOrder((order.state: “onway”))}

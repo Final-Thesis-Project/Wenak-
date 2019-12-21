@@ -58,7 +58,7 @@ const useStyles = makeStyles(theme => ({
     color: "red",
     textAlign: "center",
     indicatorColor: "Primary",
-    padding: "50px 100px 50px 100px"
+    padding: "50px 100px 50px 90px"
   },
   iconTab: {
     color: "#FAFAFA",
@@ -68,10 +68,11 @@ const useStyles = makeStyles(theme => ({
     indicatorColor: "#FFCA28",
     fontSize: "14px",
     textColor: "#212121",
-    marginLeft: "180px",
+    marginLeft: "137px",
     marginRight: "50px",
     textAlign: "center",
-    // paddingLeft: "20px",
+    fontFamily: "cairo",
+    fontWeight: "bold",
     width: "1000px"
   },
   navcolor: {

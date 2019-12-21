@@ -31,6 +31,12 @@ const App: React.FC = () => {
         <Route exact path={"/LoginForm"} component={LoginForm} />
         <Route exact path={"/UserForm"} component={UserForm} className="signUp" />
         <Route exact path={"/DrawerIcon"} component={DrawerIcon} />
+<<<<<<< HEAD:wenak app/src/App.tsx
+        {/* <Route exact path={"/LoginForm"} component={LoginForm} /> */}
+        {/* <Route exact path={"/Trial"} component={Trial} /> */}
+        {/* <Route exact path={"/Home"} component={Home} /> */}
+=======
+>>>>>>> 99afdbaa9541614fdccd432dfc616a364ef42e4c:src/App.tsx
         <Route exact path={"/Home_map2"} component={Home_map2} />
         <Route exact path={"/CustomerOrd"} component={CustomerOrd} />
         <Route exact path={"/DriverOrd"} component={DriverOrd} />
@@ -42,6 +48,12 @@ const App: React.FC = () => {
         <Route exact path={"/Toolbar2"} component={Toolbar2} />
         <Route exact path={"/SendOrder"} component={SendOrder} />
         <Route exact path={"/NavbarUser"} component={NavbarUser} />
+<<<<<<< HEAD:wenak app/src/App.tsx
+        <Route exact path={"/Checkout"} component={Checkout} />
+        {/* <Profile />
+    <DriverOrders /> */}
+=======
+>>>>>>> 99afdbaa9541614fdccd432dfc616a364ef42e4c:src/App.tsx
       </div>
     </BrowserRouter>
   );
