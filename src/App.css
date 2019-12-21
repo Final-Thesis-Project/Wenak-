@@ -1,0 +1,303 @@
+@import url("https://fonts.googleapis.com/css?family=Agency+FB&display=swap");
+.nav {
+  background: yellow;
+}
+.signUp {
+  align-items: center;
+  align-content: center;
+  align-self: center;
+}
+.test {
+  color: blue !important;
+  text-align: center;
+  padding: 100px !important;
+  margin-top: 150px !important;
+  margin-left: 270px !important;
+  margin-right: 270px !important;
+}
+#order {
+  color: brown !important;
+  text-align: center !important;
+  padding: 20 px !important;
+  margin-top: 150px !important;
+  margin-left: 370px !important;
+  margin-right: 370px !important;
+}
+menu {
+  color: brown;
+  text-align: center;
+  padding: 20 px;
+}
+
+Settings {
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  text-align: center !important;
+  padding: 20 px !important;
+  margin-top: 150px !important;
+  margin-left: 370px !important;
+  margin-right: 370px !important;
+}
+/* Social Follow Stuff */
+.social-container {
+  background: #eee;
+  padding: 25px 50px;
+}
+.social-title {
+  font-size: 32px;
+  font-weight: 500;
+  font-style: italic;
+  color: #333;
+}
+a.social {
+  margin: 0 1rem;
+  transition: transform 250ms;
+  display: inline-block; /* Inline elements can't do translate, that's why we put this line */
+}
+a.social:hover {
+  transform: translateY(-2px);
+}
+a.youtube {
+  color: #eb3223;
+}
+a.facebook {
+  color: #4968ad;
+}
+a.instagram {
+  color: black;
+}
+a.twitter {
+  color: #49a1eb;
+}
+a.linkedin {
+  color: #0073b1;
+}
+/* Social Follow Stuff Up */
+/* Contact form CSS */
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+.App-intro {
+  font-size: large;
+}
+
+.slider {
+  width: 100%;
+  height: 500px;
+}
+.slideImg {
+  /* background-size: cover;
+  background-position: center;
+  position: relative;
+  width: 100%;
+  height: 100%; */
+  /* margin-top: -300px; */
+  position: relative;
+  margin: 0 auto;
+  max-width: 970px;
+  font-family: "BebasNeueRegular", "Arial Narrow", Arial, sans-serif;
+  text-align: left;
+}
+.fontFamilyy {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.headerHome {
+  background-color: #2f2e2e !important;
+  height: 10px;
+}
+.slidecolor {
+  height: 10px;
+}
+.imgHome {
+  background-size: cover;
+  width: 100%;
+}
+
+.slide-container {
+  width: 100%;
+}
+
+/* .headerBar{
+  background-color: red;
+} */
+.marginAbout {
+  margin-top: 2% !important;
+}
+
+.slide-container {
+  width: 70%;
+  margin: auto;
+}
+
+h3 {
+  text-align: center;
+}
+.loginTitle {
+  color: #aed581 !important;
+}
+
+.each-slide > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  height: 300px;
+}
+.gray {
+  background-color: #2f2e2e !important;
+}
+.each-slide span {
+  padding: 20px;
+  font-size: 20px;
+  background: #efefef;
+  text-align: center;
+}
+.butLog {
+  background-color: #aed581 !important;
+  color: #ffffff !important;
+}
+.each-fade {
+  display: flex;
+  height: 400px;
+}
+
+.each-fade .image-container {
+  width: 75%;
+  overflow: hidden;
+  height: 394px;
+}
+
+.each-fade .image-container img {
+  width: 100%;
+}
+
+.each-fade h2 {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background: rgb(174, 213, 129);
+  color: white;
+  font-family: Agency FB;
+  font-size: 50px;
+  height: 394.5px;
+}
+.backButton {
+  color: #eee !important;
+  background: #aed581 !important;
+  font-family: cairo !important;
+  font-size: 16px !important;
+}
+.arrow {
+  background: #eee !important;
+}
+.white {
+  color: #aed581 !important;
+}
+
+.input {
+  border-color: #bababc !important;
+}
+#backButton {
+  color: #aed581 !important;
+  width: 160px !important;
+  height: 50px !important;
+  font-size: 30px;
+  font-family: cairo;
+}
+.orderDetails1 {
+  margin-right: 25px !important;
+  margin-top: 15px !important;
+  margin-bottom: 15px !important;
+  background-color: #aed581 !important;
+  margin-left: 100px !important;
+  width: 248px !important;
+  color: #eee !important;
+}
+
+.orderDetails2 {
+  margin-right: 25px !important;
+  margin-left: 15px !important;
+  margin-top: 15px !important;
+  margin-bottom: 15px !important;
+  background-color: #2f2e2e !important;
+  width: 89px !important;
+  color: #eee !important;
+  font-family: cairo !important;
+}
+.orderDetails {
+  /* margin-right: 25px !important; */
+  margin-left: 35px !important;
+  margin-top: 25px !important;
+  /* margin-bottom: 15px !important; */
+  font-family: cairo !important;
+}
+
+.contino {
+  /* margin-top: 15px !important; */
+  margin-right: 15px !important;
+}
+.orderConfirm {
+  margin-right: 45px !important;
+  margin-left: 45px !important;
+  /* margin-top: 25px !important; */
+}
+.footer {
+  color: #aed581 !important;
+  font-size: 20px;
+  font-family: cairo;
+}
+.maplable1 {
+  margin-left: 15px;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  color: #676161;
+}
+.mapInput {
+  margin-bottom: 15px;
+}
+.accept {
+  color: #ffffff;
+  background-color: #aed581 !important;
+  width: 180px !important;
+  height: 40px;
+  margin-top: 34px !important;
+  font-size: 18px !important;
+  border-radius: 10px !important;
+  margin-right: 37px !important;
+}
+
+.lat {
+  margin-left: -2% !important;
+  margin-top: 6% !important;
+}
+.social {
+  text-align: center;
+  margin-left: 37%;
+}
+.right {
+  /* text-align: center; */
+  margin-left: 41.4%;
+  color: #aed581 !important;
+  margin-top: 2%;
+}
+.logoSize {
+  max-width: 60% !important;
+  margin-left: 18% !important;
+}
+.logoSize2 {
+  max-width: 60% !important;
+  margin-left: 18% !important;
+}
+.viewD {
+  background-color: #4a4c48 !important;
+}
+.acceptD {
+  background-color: #aed581 !important;
+}
