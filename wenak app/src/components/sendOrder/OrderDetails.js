@@ -30,34 +30,36 @@ export class OrderDetails extends Component {
           <MuiThemeProvider>
             <React.Fragment>
               {/* <AppBar title="Enter User Details"/> */}
-              <TextField
-                hintText="Enter Your Item"
-                floatingLabelText="Item"
-                onChange={handleChange("item")}
-                defaultValue={values.item}
-              />
-              <br />
-              <TextField
-                hintText="Enter The Reciever Name"
-                floatingLabelText="Reciever name"
-                onChange={handleChange("recieverName")}
-                defaultValue={values.recieverName}
-              />
-              <br />
-              <TextField
-                hintText="Enter The Reciever Phone"
-                floatingLabelText="Reciever Phone"
-                onChange={handleChange("recieverPhone")}
-                defaultValue={values.recieverPhone}
-              />
-              <br />
-              <br />
-              <TextField
-                hintText="Additional Notes"
-                floatingLabelText="Notes"
-                onChange={handleChange("note")}
-                defaultValue={values.note}
-              />
+              <div className="orderDetails">
+                <TextField
+                  hintText="Enter Your Item"
+                  floatingLabelText="Item"
+                  onChange={handleChange("item")}
+                  defaultValue={values.item}
+                />
+                <br />
+                <TextField
+                  hintText="Enter The Reciever Name"
+                  floatingLabelText="Reciever name"
+                  onChange={handleChange("recieverName")}
+                  defaultValue={values.recieverName}
+                />
+                <br />
+                <TextField
+                  hintText="Enter The Reciever Phone"
+                  floatingLabelText="Reciever Phone"
+                  onChange={handleChange("recieverPhone")}
+                  defaultValue={values.recieverPhone}
+                />
+                <br />
+                <br />
+                <TextField
+                  hintText="Additional Notes"
+                  floatingLabelText="Notes"
+                  onChange={handleChange("note")}
+                  defaultValue={values.note}
+                />
+              </div>
               <br />
               {/* <div className="signUp">
                      <RadioGroup className="radio" aria-label="position" name="position" defaultValue={values.userType} onChange={handleChange('userType')} row>                    

@@ -1,8 +1,9 @@
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import Slider from "../slider.jsx";
-import logo2 from "../../assets/logo2.png";
+import logo2 from "../../assets/weenakUI-logo-17.png";
 import { Link } from "react-router-dom";
+import "../../App.css";
 
 import {
   Button,
@@ -129,7 +130,7 @@ class DesktopContainer extends Component {
                   </Button> */}
                   <Link to="/LoginForm">
                     <Button className="backButton" animated>
-                      <Button.Content visible>Go To Site</Button.Content>
+                      <Button.Content visible>Log In</Button.Content>
                       <Button.Content hidden>
                         <Icon name="arrow right" />
                       </Button.Content>
@@ -213,7 +214,7 @@ class MobileContainer extends Component {
                     Log in
                   </Button> */}
                   <Button as="a" inverted style={{ marginLeft: "0.5em" }}>
-                    Go To Site
+                    Log In
                   </Button>
                 </Menu.Item>
               </Menu>
@@ -249,19 +250,33 @@ const HomepageLayout = () => (
       <Grid container stackable verticalAlign="middle">
         <Grid.Row>
           <Grid.Column width={8}>
-            <Header as="h3" style={{ fontSize: "2em", textAlign: "left" }}>
+            <Header
+              as="h3"
+              style={{
+                fontFamily: "cairo",
+                fontSize: "2em",
+                textAlign: "left"
+              }}
+            >
               Wenak can be used to order anything in mind
             </Header>
-            <p style={{ fontSize: "1.33em" }}>
+            <p style={{ fontFamily: "cairo", fontSize: "1.33em" }}>
               Wenak is a palestinian WebApp created to help solve a wide range
               problem that we have in palestine.
             </p>
             <br></br>
             <br></br>
-            <Header as="h3" style={{ fontSize: "2em", textAlign: "left" }}>
+            <Header
+              as="h3"
+              style={{
+                fontFamily: "cairo",
+                fontSize: "2em",
+                textAlign: "left"
+              }}
+            >
               Advantages of Wenak
             </Header>
-            <p style={{ fontSize: "1.33em" }}>
+            <p style={{ fontFamily: "cairo", fontSize: "1.33em" }}>
               Yes that's right, you thought it was the stuff of dreams, but even
               delivery apps can vary in advantages.<br></br>Our WebApp
               fascilitates a lot of advantages that we can't say it's avilable
@@ -287,7 +302,12 @@ const HomepageLayout = () => (
         <Grid divided inverted stackable>
           <Grid.Row>
             <Grid.Column width={3} style={{ marginLeft: "200px" }}>
-              <Header className="footer" inverted as="h4" content="About" />
+              <Header
+                className="footer"
+                inverted
+                as="h4"
+                content=" Our Company"
+              />
               <List link inverted>
                 <List.Item className="footer" as="a">
                   About
@@ -316,18 +336,24 @@ const HomepageLayout = () => (
                 </List.Item>
               </List>
             </Grid.Column>
-            {/* <Grid.Column width={7}> */}
-            {/* <Header as="h4" inverted>
-                Footer Header
-              </Header> */}
-            {/* <p>
-                Extra space for a call to action inside the footer that could
-                help re-engage users.
-              </p> */}
-            {/* </Grid.Column> */}
           </Grid.Row>
+          <div className="social">
+            <button class="ui circular facebook icon button">
+              <i class="facebook icon"></i>
+            </button>
+            <button class="ui circular twitter icon button">
+              <i class="twitter icon"></i>
+            </button>
+            <button class="ui circular linkedin icon button">
+              <i class="linkedin icon"></i>
+            </button>
+            <button class="ui circular google plus icon button">
+              <i class="google plus icon"></i>
+            </button>
+          </div>
         </Grid>
       </Container>
+      <div className="right">All Rights reserved © 2020 llC </div>
     </Segment>
   </ResponsiveContainer>
 );

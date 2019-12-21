@@ -44,12 +44,6 @@ const App: React.FC = () => {
         <main></main>
         <Route exact path={"/DrawerIcon"} component={DrawerIcon} />
         {/* <Route exact path={"/LoginForm"} component={LoginForm} /> */}
-        <Route
-          exact
-          path={"/UserForm"}
-          component={UserForm}
-          className="signUp"
-        />
         {/* <Route exact path={"/Trial"} component={Trial} /> */}
         {/* <Route exact path={"/Home"} component={Home} /> */}
         <Route exact path={"/Home_map2"} component={Home_map2} />

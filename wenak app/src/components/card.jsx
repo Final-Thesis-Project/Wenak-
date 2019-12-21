@@ -1,4 +1,3 @@
-
 import React, { Fragment, useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
@@ -51,7 +50,7 @@ const useStyles = makeStyles(theme => ({
   },
   accept: {
     color: "#FFFFFF",
-    backgroundColor: "#4CAF50",
+    backgroundColor: "#aed581",
     width: "130px",
     height: " 40px"
   },
@@ -260,7 +259,6 @@ export default function ComplexGrid() {
                 >
                   View <VisibilityIcon className={classes.iconTab} />
                 </Button>
-              
               </div>
             </div>
           </Grid>
