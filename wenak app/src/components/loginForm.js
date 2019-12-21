@@ -67,7 +67,7 @@ class LoginForm extends Component {
         }
       },
       error: function(request, status, error) {
-        console.log("error in mobilenumor password");
+        console.log("error in mobile number or password");
         alert("Error in mobilenum or password");
       }
     });
