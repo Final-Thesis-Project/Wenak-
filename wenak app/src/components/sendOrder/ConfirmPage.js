@@ -77,6 +77,7 @@ export class ConfirmPage extends Component {
       success: function() {
         console.log("The order has sent successfully");
         alert("The order sent successfully");
+        window.location = "/Checkout";
       },
       error: function() {
         console.log("error in order");
