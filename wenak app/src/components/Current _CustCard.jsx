@@ -265,8 +265,9 @@ export default function ComplexGrid2() {
                     <Typography variant="body2" gutterBottom>
                       <p>
                         {" "}
-                        <LocationOnIcon className={classes.icons} /> Name:{" "}
-                        {CuOrder.name}
+                        <LocationOnIcon className={classes.icons} />Driver Name:
+                        {CuOrder.driver_name}
+}
                       </p>
                     </Typography>
                     {/* ))} */}
@@ -333,15 +334,13 @@ export default function ComplexGrid2() {
                   }}
                 >
                   <p>
-                        {" "}
-                       $ {CuOrders.price}
+                       {CuOrder.price}
+                     $
                   </p>
                   {/* price */}
                 </Typography>
               </Grid>
               {/* </div> */}
-
-              
             </div>
           </Grid>
         </Paper>

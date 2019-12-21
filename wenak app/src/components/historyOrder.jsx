@@ -124,7 +124,8 @@ export default function ComplexGrid2() {
                     <Typography variant="body2">
                       <p>
                         {" "}
-                        <PersonIcon className={classes.icons} /> Name:
+                        <PersonIcon className={classes.icons} /> 
+                        Name:
                         {order.name}
                       </p>
                     </Typography>
@@ -135,6 +136,22 @@ export default function ComplexGrid2() {
                         {" "}
                         <LocationOnIcon className={classes.icons} /> Order Details :{" "}
                         {order.order_details}
+                      </p>
+                    </Typography>
+                  </div>
+                  <div className={classes.orderDetails}>
+                    <Typography variant="body2">
+                      <p>
+                        <BeenhereIcon className={classes.icons} /> Pick up location :{" "}
+                        {order.location_start_lng}{"  ,  "}{order.location_start_lat}
+                      </p>
+                    </Typography>
+                  </div>
+                  <div className={classes.orderDetails}>
+                    <Typography variant="body2">
+                      <p>
+                        <BeenhereIcon className={classes.icons} /> Drop off location :{" "}
+                        {order.location_end_lng}{"  ,  "}{order.location_end_lat}
                       </p>
                     </Typography>
                   </div>

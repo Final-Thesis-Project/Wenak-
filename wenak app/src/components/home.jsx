@@ -20,9 +20,9 @@ class home extends React.Component {
       <div>
          {/* <Image src={Logo2} size='small'/> */}
           <div   className="mapStyle">
-          <Header as='h2' size='medium' color='grey' textAlign='center'>
+          {/* <Header as='h2' size='medium' color='grey' textAlign='center'>
               Assign your Pickup point
-            </Header>
+            </Header> */}
           <Trial
         google={this.props.google}
         handleClick= {this.props.handleClick}

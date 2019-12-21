@@ -1,36 +1,42 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
-import Button from '@material-ui/core/Button';
-import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import SettingsIcon from '@material-ui/icons/Settings';
-import PhoneIcon from '@material-ui/icons/Phone';
-import MenuIcon from '@material-ui/icons/Menu';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
+import Button from "@material-ui/core/Button";
+import List from "@material-ui/core/List";
+import Divider from "@material-ui/core/Divider";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
+import SettingsIcon from "@material-ui/icons/Settings";
+import PhoneIcon from "@material-ui/icons/Phone";
+import MenuIcon from "@material-ui/icons/Menu";
 import { Link } from "react-router-dom";
-import InfoIcon from '@material-ui/icons/Info';
+import InfoIcon from "@material-ui/icons/Info";
 
 const useStyles = makeStyles({
   list: {
-    width: 250,
+    width: 250
   },
   fullList: {
-    width: 'auto',
+    width: "auto"
   },
+  sidIcon: {
+    color: "#ffffff"
+  }
 });
 
 export default function DrawerIcon() {
   const classes = useStyles();
   const [state, setState] = React.useState({
-    left: false,
-   
+    left: false
   });
 
   const toggleDrawer = (side, open) => event => {
-    if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+    if (
+      event &&
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
       return;
     }
 
@@ -44,44 +50,55 @@ export default function DrawerIcon() {
       onClick={toggleDrawer(side, false)}
       onKeyDown={toggleDrawer(side, false)}
     >
-      <Link to={'/Settings'}>
-      <List>
-        {['Settings'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ?  <SettingsIcon /> :  <SettingsIcon /> }</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
+      <Link to={"/Settings"}>
+        <List className="sidIcon">
+          {["Settings"].map((text, index) => (
+            <ListItem className="sidIcon" button key={text}>
+              <ListItemIcon className="sidIcon">
+                {index % 2 === 0 ? <SettingsIcon /> : <SettingsIcon />}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
+        </List>
       </Link>
 
       <Divider />
 
-      <Link to={'/About'}>
-      <List>
-        {['About Us'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InfoIcon />  : <Link to={'/About'}><InfoIcon /></Link>}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
+      <Link to={"/About"}>
+        <List>
+          {["About Us"].map((text, index) => (
+            <ListItem className="sidIcon" button key={text}>
+              <ListItemIcon>
+                {index % 2 === 0 ? (
+                  <InfoIcon />
+                ) : (
+                  <Link to={"/About"}>
+                    <InfoIcon />
+                  </Link>
+                )}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
+        </List>
       </Link>
 
       <Divider />
 
-      <Link to={'/ContactForm'}>
-      <List>
-        {['Contact Us'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <PhoneIcon />   :  <PhoneIcon /> }</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
+      <Link to={"/ContactForm"}>
+        <List>
+          {["Contact Us"].map((text, index) => (
+            <ListItem button key={text}>
+              <ListItemIcon>
+                {index % 2 === 0 ? <PhoneIcon /> : <PhoneIcon />}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
+        </List>
       </Link>
     </div>
-  
   );
 
   const fullList = side => (
@@ -91,59 +108,70 @@ export default function DrawerIcon() {
       onClick={toggleDrawer(side, false)}
       onKeyDown={toggleDrawer(side, false)}
     >
-      <Link to={'/Settings'}>
-      <List>
-        {['Settings'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ?  <SettingsIcon /> :  <SettingsIcon /> }</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
+      <Link to={"/Settings"}>
+        <List>
+          {["Settings"].map((text, index) => (
+            <ListItem button key={text}>
+              <ListItemIcon>
+                {index % 2 === 0 ? <SettingsIcon /> : <SettingsIcon />}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
+        </List>
       </Link>
 
       <Divider />
 
-      <Link to={'/About'}>
-      <List>
-        {['About Us'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InfoIcon />  : <Link to={'/About'}><InfoIcon /></Link>}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
+      <Link to={"/About"}>
+        <List>
+          {["About Us"].map((text, index) => (
+            <ListItem button key={text}>
+              <ListItemIcon>
+                {index % 2 === 0 ? (
+                  <InfoIcon />
+                ) : (
+                  <Link to={"/About"}>
+                    <InfoIcon />
+                  </Link>
+                )}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
+        </List>
       </Link>
 
       <Divider />
 
-      <Link to={'/ContactForm'}>
-      <List>
-        {['Contact Us'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <PhoneIcon />   :  <PhoneIcon /> }</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
+      <Link to={"/ContactForm"}>
+        <List>
+          {["Contact Us"].map((text, index) => (
+            <ListItem button key={text}>
+              <ListItemIcon>
+                {index % 2 === 0 ? <PhoneIcon /> : <PhoneIcon />}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
+        </List>
       </Link>
     </div>
   );
 
   return (
     <div>
-      <Button onClick={toggleDrawer('left', true)}>
-      <MenuIcon />
+      <Button onClick={toggleDrawer("left", true)}>
+        <MenuIcon />
       </Button>
-      
+
       <SwipeableDrawer
         open={state.left}
-        onClose={toggleDrawer('left', false)}
-        onOpen={toggleDrawer('left', true)}
+        onClose={toggleDrawer("left", false)}
+        onOpen={toggleDrawer("left", true)}
       >
-        {sideList('left')}
+        {sideList("left")}
       </SwipeableDrawer>
-      
     </div>
   );
 }

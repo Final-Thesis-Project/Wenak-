@@ -178,6 +178,11 @@ export default function ComplexGrid() {
     document.body.appendChild(script);
   }
   
+  const sendLocation=(lat,lng)=>{
+
+
+  }
+
 
   return (
     <div className={classes.root}>
@@ -210,7 +215,7 @@ export default function ComplexGrid() {
                     <Typography variant="body2" gutterBottom>
                       <p>
                         {" "}
-                        <LocationOnIcon className={classes.icons} /> Location :{" "}
+                        <LocationOnIcon className={classes.icons} /> Order Details:{" "}
                         {order.order_details}
                       </p>
                     </Typography>
@@ -226,14 +231,22 @@ export default function ComplexGrid() {
                     </Typography>
                     {/* ))} */}
                   </div>
-                  {/* <div className={classes.orderDetails}>
+                  <div className={classes.orderDetails}>
                     <Typography variant="body2">
                       <p>
-                        <ScheduleIcon className={classes.icons} /> Address:
-                        {converttoaddress(order.location_start_lat,order.location_start_lng) }
+                        <BeenhereIcon className={classes.icons} /> Pick up location :{" "}
+                        {order.location_start_lng}{"  ,  "}{order.location_start_lat}
                       </p>
                     </Typography>
-                  </div> */}
+                  </div>
+                  <div className={classes.orderDetails}>
+                    <Typography variant="body2">
+                      <p>
+                        <BeenhereIcon className={classes.icons} /> Drop off location :{" "}
+                        {order.location_end_lng}{"  ,  "}{order.location_end_lat}
+                      </p>
+                    </Typography>
+                  </div>
                   <div className={classes.orderDetails}>
                     {/* {orders.map(order => ( */}
                     <Typography variant="body2">
@@ -292,7 +305,7 @@ export default function ComplexGrid() {
                   className={classes.view}
                   variant="contained"
                   color="#CDDC39"
-                  // onClick={() => setOrder((order.state: "onway"))}
+                  onClick={sendLocation(order.location_start_lat,order.location_start_lng)}
                 >
                   View <VisibilityIcon className={classes.iconTab} />
                 </Button>

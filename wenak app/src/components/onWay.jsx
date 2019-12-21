@@ -183,6 +183,22 @@ export default function ComplexGrid3() {
                   <div className={classes.orderDetails}>
                     <Typography variant="body2">
                       <p>
+                        <BeenhereIcon className={classes.icons} /> Pick up location :{" "}
+                        {order.location_start_lng}{"  ,  "}{order.location_start_lat}
+                      </p>
+                    </Typography>
+                  </div>
+                  <div className={classes.orderDetails}>
+                    <Typography variant="body2">
+                      <p>
+                        <BeenhereIcon className={classes.icons} /> Drop off location :{" "}
+                        {order.location_end_lng}{"  ,  "}{order.location_end_lat}
+                      </p>
+                    </Typography>
+                  </div>
+                  <div className={classes.orderDetails}>
+                    <Typography variant="body2">
+                      <p>
                         {" "}
                         <ScheduleIcon className={classes.icons} /> Time:
                         {order.date}

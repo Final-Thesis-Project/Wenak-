@@ -21,21 +21,18 @@ import { BrowserRouter, Route } from "react-router-dom";
 import DrawerIcon from "./components/Toolbar/Drawer";
 import Settings from "./components/Settings";
 import About from "./components/About";
-import ContactForm from './components/contactForm/ContactForm';
 import Trial from './components/Trial';
 import Splash from './components/splash/Splash';
 import Checkout from './components/Checkout';
 import viewOrder from './components/viewOrder';
-import SendOrder from './components/sendOrder/SendOrder'
+import ContactForm from "./components/contactForm/ContactForm";
+import SendOrder from "./components/sendOrder/SendOrder";
 
 const App: React.FC = () => {
-  return ( 
-  <BrowserRouter>
-  <div className="App">
-    {/* <Sidebar /> */}
-    {/* <NavBar /> */}
-
-    {/* <DrawerIcon /> */}
+  return (
+    <BrowserRouter>
+      <div className="App">
+        <main></main>
     <main >
     
     </main>
@@ -48,13 +45,7 @@ const App: React.FC = () => {
     <main></main>
      <Route exact path={"/NavbarUser"} component={NavbarUser} /> 
     <Route exact path={"/DrawerIcon"} component={DrawerIcon} />
-     <Route exact path={"/LoginForm"} component={LoginForm}/>
-    <Route
-      exact
-      path={"/UserForm"}
-      component={UserForm}
-      className="signUp"
-    />
+   
     {/* <Route exact path={"/Trial"} component={Trial} /> */}
     {/* <Route exact path={"/Home"} component={Home} /> */}
     <Route exact path={"/Home_map2"} component={Home_map2} />
@@ -71,13 +62,8 @@ const App: React.FC = () => {
     <Route exact path={"/SendOrder"} component={SendOrder} />
     <Route exact path={"/viewOrder"} component={viewOrder} />
 
-
-  
-    {/* <Profile />
-    <DriverOrders /> */}
-  </div>
- 
-</BrowserRouter>
-);
+      </div>
+    </BrowserRouter>
+  );
 };
 export default App;

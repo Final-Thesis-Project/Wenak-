@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Agency+FB&display=swap");
 .nav {
   background: yellow;
 }
@@ -105,18 +106,18 @@ a.linkedin {
   font-family: Arial, Helvetica, sans-serif;
 }
 .headerHome {
-  background-color: #2F2E2E !important;
+  background-color: #2f2e2e !important;
   height: 10px;
 }
-.slidecolor{
+.slidecolor {
   height: 10px;
 }
-.imgHome{
-  background-size: cover ;
+.imgHome {
+  background-size: cover;
   width: 100%;
 }
 
-.slide-container{
+.slide-container {
   width: 100%;
 }
 
@@ -132,6 +133,9 @@ a.linkedin {
 h3 {
   text-align: center;
 }
+.loginTitle {
+  color: #aed581 !important;
+}
 
 .each-slide > div {
   display: flex;
@@ -140,14 +144,19 @@ h3 {
   background-size: cover;
   height: 300px;
 }
-
+.gray {
+  background-color: #2f2e2e !important;
+}
 .each-slide span {
   padding: 20px;
   font-size: 20px;
   background: #efefef;
   text-align: center;
 }
-
+.butLog {
+  background-color: #aed581 !important;
+  color: #ffffff !important;
+}
 .each-fade {
   display: flex;
   height: 400px;
@@ -175,26 +184,53 @@ h3 {
   font-size: 50px;
   height: 394.5px;
 }
-.backButton{
+.backButton {
   color: #eee !important;
-  background:#AED581 !important;
+  background: #aed581 !important;
   font-family: Agency FB !important;
   font-size: 16px !important;
-
 }
 
-#backButton{
-  color: #AED581 !important;
+.white {
+  color: #aed581 !important;
+}
+
+.input {
+  border-color: #bababc !important;
+}
+#backButton {
+  color: #aed581 !important;
   width: 160px !important;
   height: 50px !important;
   font-size: 30px;
-  font-family: Agency FB;
+  font-family: cairo;
 }
-.chat{
-  background:#AED581 !important;
+.contino {
+  margin-top: 15px !important;
+  margin-bottom: 15px !important;
 }
-.footer{
-  color: #AED581 !important;
+.footer {
+  color: #aed581 !important;
   font-size: 20px;
   font-family: Agency FB;
+}
+.maplable1 {
+  margin-left: 15px;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  color: #676161;
+}
+.mapInput {
+  margin-bottom: 15px;
+}
+.accept {
+  color: #ffffff;
+  background-color: #aed581 !important;
+  width: 180px !important;
+  height: 40px;
+  margin-top: 15px !important;
+  font-size: 18px !important;
+  border-radius: 10px !important;
+  margin-right: 15px;
 }

@@ -78,7 +78,8 @@
     "eject": "react-scripts eject",
     "server": "nodemon ./servers/server.js",
     "watch-ts": "tsc -w",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "heroku-postbuild": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
