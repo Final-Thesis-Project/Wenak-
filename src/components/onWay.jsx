@@ -187,8 +187,24 @@ export default function ComplexGrid3() {
                     {/* {orders.map(order => ( */}
                     <Typography variant="body2" gutterBottom>
                       <p>
-                        <LocationOnIcon className={classes.icons} /> Location :{" "}
+                        <LocationOnIcon className={classes.icons} /> Order Details :{" "}
                         {order.order_details}
+                      </p>
+                    </Typography>
+                  </div>
+                  <div className={classes.orderDetails}>
+                    <Typography variant="body2">
+                      <p>
+                        <BeenhereIcon className={classes.icons} /> Pick up location :{" "}
+                        {order.location_start_lng}{"  ,  "}{order.location_start_lat}
+                      </p>
+                    </Typography>
+                  </div>
+                  <div className={classes.orderDetails}>
+                    <Typography variant="body2">
+                      <p>
+                        <BeenhereIcon className={classes.icons} /> Drop off location :{" "}
+                        {order.location_end_lng}{"  ,  "}{order.location_end_lat}
                       </p>
                     </Typography>
                   </div>

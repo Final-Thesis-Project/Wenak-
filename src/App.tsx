@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { BrowserRouter, Route } from "react-router-dom";
 import Toolbar from "./components/Toolbar/Toolbar.jsx";
 import Sidebar from "./components/Toolbar/Sidebar.jsx";
 import Home_map2 from "./components/home_map2";
@@ -13,30 +14,62 @@ import DriverOrd from "./components/DriverOrd";
 import NavBar from "./components/Toolbar/Toolbar.jsx";
 import Toolbar2 from "./components/Toolbar/Toolbar2.jsx";
 import NavbarUser from "./components/Toolbar/NavbarUser";
-import { BrowserRouter, Route } from "react-router-dom";
+
 import DrawerIcon from "./components/Toolbar/Drawer";
 import Settings from "./components/Settings";
 import About from "./components/About";
-import ContactForm from "./components/contactForm/ContactForm";
 import Trial from "./components/Trial";
 import Splash from "./components/splash/Splash";
 import Checkout from "./components/Checkout";
+import viewOrder from "./components/sendOrder/viewOrder";
+import ContactForm from "./components/contactForm/ContactForm";
 import SendOrder from "./components/sendOrder/SendOrder";
 
 const App: React.FC = () => {
   return (
     <BrowserRouter>
       <div className="App">
-        <Route exact path={"/"} component={Splash} />
-        <Route exact path={"/LoginForm"} component={LoginForm} />
-        <Route exact path={"/UserForm"} component={UserForm} className="signUp" />
-        <Route exact path={"/DrawerIcon"} component={DrawerIcon} />
-<<<<<<< HEAD:wenak app/src/App.tsx
-        {/* <Route exact path={"/LoginForm"} component={LoginForm} /> */}
+        <main></main>
+        <main></main>
+
+        {/* <Route exact path={"/"} component={Splash} />
+    <Route exact path={"/LoginForm"} component={LoginForm} />
+    <Route exact path={"/UserForm"} component={UserForm} className="signUp" /> */}
+        {/* <NavBar /> */}
+        {/* <DrawerIcon /> */}
+        <main></main>
+        {/* <Route exact path={"/NavbarUser"} component={NavbarUser} />  */}
+        {/* <Route exact path={"/DrawerIcon"} component={DrawerIcon} /> */}
+
         {/* <Route exact path={"/Trial"} component={Trial} /> */}
         {/* <Route exact path={"/Home"} component={Home} /> */}
-=======
->>>>>>> 99afdbaa9541614fdccd432dfc616a364ef42e4c:src/App.tsx
+        {/* <Route exact path={"/Home_map2"} component={Home_map2} /> */}
+        {/* <Route exact path={"/HomePage"} component={HomePage} /> */}
+        {/* <Route exact path={"/CustomerOrd"} component={CustomerOrd} /> */}
+        {/* <Route exact path={"/DriverOrd"} component={DriverOrd} /> */}
+        {/* <Route exact path={"/CurrentOrders"} component={CurrentOrders} /> */}
+        {/* <Route exact path={"/Settings"} component={Settings} /> */}
+        {/* <Route exact path={"/About"} component={About} /> */}
+        {/* <Route exact path={"/SocialFollow"} component={SocialFollow} /> */}
+        {/* <Route exact path={"/ContactForm"} component={ContactForm} /> */}
+        {/* <Route exact path={"/Profile"} component={Profile} /> */}
+        {/* <Route exact path={"/Toolbar2"} component={Toolbar2} /> */}
+        {/* <Route exact path={"/SendOrder"} component={SendOrder} /> */}
+        <Route exact path={"/viewOrder"} component={viewOrder} />
+
+        <Route exact path={"/"} component={Splash} />
+        <Route exact path={"/LoginForm"} component={LoginForm} />
+        <Route
+          exact
+          path={"/UserForm"}
+          component={UserForm}
+          className="signUp"
+        />
+        <Route exact path={"/DrawerIcon"} component={DrawerIcon} />
+        {/* <Route exact path={"/LoginForm"} component={LoginForm} /> */}
+
+        {/* <Route exact path={"/Trial"} component={Trial} /> */}
+        {/* <Route exact path={"/Home"} component={Home} /> */}
         <Route exact path={"/Home_map2"} component={Home_map2} />
         <Route exact path={"/CustomerOrd"} component={CustomerOrd} />
         <Route exact path={"/DriverOrd"} component={DriverOrd} />
@@ -44,16 +77,13 @@ const App: React.FC = () => {
         <Route exact path={"/Settings"} component={Settings} />
         <Route exact path={"/About"} component={About} />
         <Route exact path={"/ContactForm"} component={ContactForm} />
-        <Route exact path={"/Profile"} component={Profile} />
+        {/* <Route exact path={"/Profile"} component={Profile} /> */}
         <Route exact path={"/Toolbar2"} component={Toolbar2} />
         <Route exact path={"/SendOrder"} component={SendOrder} />
         <Route exact path={"/NavbarUser"} component={NavbarUser} />
-<<<<<<< HEAD:wenak app/src/App.tsx
         <Route exact path={"/Checkout"} component={Checkout} />
         {/* <Profile />
     <DriverOrders /> */}
-=======
->>>>>>> 99afdbaa9541614fdccd432dfc616a364ef42e4c:src/App.tsx
       </div>
     </BrowserRouter>
   );

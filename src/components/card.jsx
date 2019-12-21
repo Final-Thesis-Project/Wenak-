@@ -7,16 +7,34 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import ButtonBase from "@material-ui/core/ButtonBase";
 import PersonIcon from "@material-ui/icons/Person";
+import GoogleMapReact from "google-map-react";
 // import DirectionsBikeIcon from "@material-ui/icons/DirectionsBike";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import BeenhereIcon from "@material-ui/icons/Beenhere";
 import ScheduleIcon from "@material-ui/icons/Schedule";
+import { Link } from "react-router-dom";
 import DoneIcon from "@material-ui/icons/Done";
 import VisibilityIcon from "@material-ui/icons/Visibility";
+import Modal from "react-awesome-modal";
 import axios from "axios";
+
+import { withStyles } from "@material-ui/core/styles";
+import Dialog from "@material-ui/core/Dialog";
+import MuiDialogTitle from "@material-ui/core/DialogTitle";
+import MuiDialogContent from "@material-ui/core/DialogContent";
+import MuiDialogActions from "@material-ui/core/DialogActions";
+import IconButton from "@material-ui/core/IconButton";
+import CloseIcon from "@material-ui/icons/Close";
+
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1
+  },
+  closeButton: {
+    position: "absolute",
+    right: theme.spacing(1),
+    top: theme.spacing(1),
+    color: theme.palette.grey[500]
   },
   paper: {
     padding: theme.spacing(2),
@@ -79,10 +97,12 @@ const useStyles = makeStyles(theme => ({
     marginLeft: "15px"
   }
 }));
+
 export default function ComplexGrid() {
   const classes = useStyles();
   const [orders, setOrder] = React.useState([]);
   const [userId, setUserId] = React.useState("");
+
   //   const [state, setState] = useState((order.state: "onway"));
   const [reciver_name, setReciver_name] = useState([]);
   //   const pending = "pending";
@@ -102,6 +122,22 @@ export default function ComplexGrid() {
         console.log("I'm error inside axios to get pendding orders", err);
       });
   }, []);
+
+  // const converttoaddress = (lat,lng) =>{
+  //   const google = window.google;
+  //   var address ="";
+  //   var latlng = new google.maps.LatLng(lat, lng);
+  //   var geocoder = geocoder = new google.maps.Geocoder();
+  //   geocoder.geocode({ 'latLng': latlng }, function (results, status) {
+  //       if (status == google.maps.GeocoderStatus.OK) {
+  //           if (results[1]) {
+  //               alert("Location: " + results[1].formatted_address);
+  //               address += results[1].formatted_address
+  //           }
+  //       }
+  //   });
+  //    return address;
+  // }
   ///------------------------ Accept pending Orders ------------------------------------
   const handleAccept = id => {
     // useEffect(() => {
@@ -119,38 +155,24 @@ export default function ComplexGrid() {
         }
       )
       .then(res => {
-        // console.log(res.data);
-        // setOrder(res.data);
         console.log("accept the order", orderId);
       })
       .catch(err => {
         console.log("error accept the order", err);
       });
   };
-  // const handleAccept = event => {
-  //   set(event.target.value);
-  // };
-  // const handleAccept = event => {
-  //   const orderId = orders._id;
-  //   console.log(orderId)
-  //   $.ajax({
-  //     url: "/api/customer/send_order",
-  //     headers: {
-  //       "x-access-token": localStorage.getItem("usertoken")
-  //     },
-  //     type: "POST",
-  //     data: { _id: orderId },
-  //     datatype: "json",
-  //     success: function() {
-  //       console.log("The order has accepted");
-  //       alert("accept the order  successfully");
-  //     },
-  //     error: function() {
-  //       console.log("error in order");
-  //       alert("Error in  accept sending");
-  //     }
-  //   });
-  // };
+
+  const componentDidMount = () => {
+    const script = document.createElement("script");
+
+    script.src = "http://maps.googleapis.com/maps/api/js?sensor=false";
+    script.async = true;
+
+    document.body.appendChild(script);
+  };
+
+  const sendLocation = (lat, lng) => {};
+
   return (
     <div className={classes.root}>
       {orders.map(order => (
@@ -182,8 +204,8 @@ export default function ComplexGrid() {
                     <Typography variant="body2" gutterBottom>
                       <p>
                         {" "}
-                        <LocationOnIcon className={classes.icons} /> Location :{" "}
-                        {order.order_details}
+                        <LocationOnIcon className={classes.icons} /> Order
+                        Details: {order.order_details}
                       </p>
                     </Typography>
                     {/* ))} */}
@@ -197,6 +219,26 @@ export default function ComplexGrid() {
                       </p>
                     </Typography>
                     {/* ))} */}
+                  </div>
+                  <div className={classes.orderDetails}>
+                    <Typography variant="body2">
+                      <p>
+                        <BeenhereIcon className={classes.icons} /> Pick up
+                        location : {order.location_start_lng}
+                        {"  ,  "}
+                        {order.location_start_lat}
+                      </p>
+                    </Typography>
+                  </div>
+                  <div className={classes.orderDetails}>
+                    <Typography variant="body2">
+                      <p>
+                        <BeenhereIcon className={classes.icons} /> Drop off
+                        location : {order.location_end_lng}
+                        {"  ,  "}
+                        {order.location_end_lat}
+                      </p>
+                    </Typography>
                   </div>
                   <div className={classes.orderDetails}>
                     {/* {orders.map(order => ( */}
@@ -251,14 +293,19 @@ export default function ComplexGrid() {
                 >
                   Accept <DoneIcon className={classes.iconTab} />
                 </Button>
-                <Button
-                  className={classes.view}
-                  variant="contained"
-                  color="#CDDC39"
-                  // onClick={() => setOrder((order.state: "onway"))}
-                >
-                  View <VisibilityIcon className={classes.iconTab} />
-                </Button>
+                <Link to={"/viewOrder"}>
+                  <Button
+                    className={classes.view}
+                    variant="contained"
+                    color="#CDDC39"
+                    onClick={sendLocation(
+                      order.location_start_lat,
+                      order.location_start_lng
+                    )}
+                  >
+                    View <VisibilityIcon className={classes.iconTab} />
+                  </Button>
+                </Link>
               </div>
             </div>
           </Grid>
@@ -267,4 +314,3 @@ export default function ComplexGrid() {
     </div>
   );
 }
-//

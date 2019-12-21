@@ -124,6 +124,9 @@ a.linkedin {
 /* .headerBar{
   background-color: red;
 } */
+.marginAbout {
+  margin-top: 2% !important;
+}
 
 .slide-container {
   width: 70%;
@@ -285,6 +288,10 @@ h3 {
   margin-top: 2%;
 }
 .logoSize {
+  max-width: 60% !important;
+  margin-left: 18% !important;
+}
+.logoSize2 {
   max-width: 60% !important;
   margin-left: 18% !important;
 }

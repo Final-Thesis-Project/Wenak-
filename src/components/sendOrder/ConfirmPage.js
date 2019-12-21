@@ -43,7 +43,7 @@ export class ConfirmPage extends Component {
       lat2,
       lang2
     );
-    var price = distanceInMeters * 0.001 * 3;
+    var price = Math.floor(distanceInMeters * 0.001 * 0.5);
     // PROCESS FORM //
     var data = {
       reciverName: this.props.values.recieverName,
@@ -109,7 +109,7 @@ export class ConfirmPage extends Component {
         <React.Fragment>
           <Dialog open="true" fullWidth="true" maxWidth="sm">
             <AppBar title="Confirm User Data" />
-            <List className="orderDetails">
+            <List>
               <ListItem>
                 <ListItemText primary="Item" secondary={item} />
               </ListItem>
@@ -154,37 +154,28 @@ export class ConfirmPage extends Component {
               <ListItem>
                 <ListItemText
                   primary="price"
-                  secondary={
+                  secondary={Math.floor(
                     this.getDistanceBetweenPoints(
                       location_start_lat,
                       location_start_lng,
                       location_end_lat,
                       location_end_lng
                     ) *
-                    0.001 *
-                    3
-                  }
+                      0.001 *
+                      0.5
+                  )}
                 />
               </ListItem>
             </List>
             <br />
-            <div>
-              <Button
-                className="orderDetails1"
-                variant="contained"
-                onClick={this.continue}
-              >
-                Confirm & Continue
-              </Button>
 
-              <Button
-                className="orderDetails2"
-                variant="contained"
-                onClick={this.back}
-              >
-                Back
-              </Button>
-            </div>
+            <Button color="secondary" variant="contained" onClick={this.back}>
+              Back
+            </Button>
+
+            <Button color="primary" variant="contained" onClick={this.continue}>
+              Confirm & Continue
+            </Button>
           </Dialog>
         </React.Fragment>
       </MuiThemeProvider>

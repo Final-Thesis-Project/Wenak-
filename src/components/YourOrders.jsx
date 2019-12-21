@@ -98,36 +98,44 @@ export default function ComplexGrid() {
     console.log("I'm inside use effect");
 
     axios
-      .get(`/api/customer/get_previous`,{headers: {"x-access-token": localStorage.getItem("usertoken")}})
+      .get(`/api/customer/get_previous`, {
+        headers: { "x-access-token": localStorage.getItem("usertoken") }
+      })
       .then(res => {
         setCuOrders(res.data);
-        console.log("I'm inside axios to get previous customer orders", res.data);
+        console.log(
+          "I'm inside axios to get previous customer orders",
+          res.data
+        );
       })
       .catch(err => {
-        console.log("I'm error inside axios to get previous customer orders", err);
+        console.log(
+          "I'm error inside axios to get previous customer orders",
+          err
+        );
       });
   }, []);
 
   ///------------------------ Accept pending Orders ------------------------------------
-//   const handleAccept = id => {
-//     // useEffect(() => {
-//     //   document.title = ` Drivers Orders`;
-//     //   console.log("I'm inside use effect Accept");
-//     const orderId = id;
-//     axios
-//       .post(
-//         `/api/driver/accept_order`,{ _id: orderId },{headers: {"x-access-token": localStorage.getItem("usertoken")}
-////
-//       )
-//       .then(res => {
-//         setOrder(res.data);
-//         console.log("accept the order", orderId);
-//       })
-//       .catch(err => {
-//         console.log("error accept the order", err);
-//       });
-//   };
-//---------------------------------------------------------------
+  //   const handleAccept = id => {
+  //     // useEffect(() => {
+  //     //   document.title = ` Drivers Orders`;
+  //     //   console.log("I'm inside use effect Accept");
+  //     const orderId = id;
+  //     axios
+  //       .post(
+  //         `/api/driver/accept_order`,{ _id: orderId },{headers: {"x-access-token": localStorage.getItem("usertoken")}
+  ////
+  //       )
+  //       .then(res => {
+  //         setOrder(res.data);
+  //         console.log("accept the order", orderId);
+  //       })
+  //       .catch(err => {
+  //         console.log("error accept the order", err);
+  //       });
+  //   };
+  //---------------------------------------------------------------
   // const handleAccept = event => {
   //   set(event.target.value);
   // };
@@ -185,7 +193,7 @@ export default function ComplexGrid() {
                     <Typography variant="body2" gutterBottom>
                       <p>
                         {" "}
-                        <LocationOnIcon className={classes.icons} /> Location :{" "}
+                        <LocationOnIcon className={classes.icons} /> Order :{" "}
                         {CuOrder.order_details}
                       </p>
                     </Typography>
@@ -241,13 +249,9 @@ export default function ComplexGrid() {
                     fontSize: "25px"
                   }}
                 >
-                  <p>$ {CuOrders.price}</p>
-                  {/* price */}
+                  <p>{CuOrder.price}$</p>
                 </Typography>
               </Grid>
-              {/* </div> */}
-
-              
             </div>
           </Grid>
         </Paper>
