@@ -116,7 +116,7 @@ export default function ComplexGrid2() {
                       <p>
                         {" "}
                         <LocalOfferIcon className={classes.icons} />
-                        user_id : {order.user_id}
+                        Order_id: {order._id}
                       </p>
                     </Typography>
                   </div>
@@ -124,7 +124,8 @@ export default function ComplexGrid2() {
                     <Typography variant="body2">
                       <p>
                         {" "}
-                        <PersonIcon className={classes.icons} /> Name:
+                        <PersonIcon className={classes.icons} /> 
+                        Name:
                         {order.name}
                       </p>
                     </Typography>
@@ -133,8 +134,24 @@ export default function ComplexGrid2() {
                     <Typography variant="body2" gutterBottom>
                       <p>
                         {" "}
-                        <LocationOnIcon className={classes.icons} /> Location :{" "}
+                        <LocationOnIcon className={classes.icons} /> Order Details :{" "}
                         {order.order_details}
+                      </p>
+                    </Typography>
+                  </div>
+                  <div className={classes.orderDetails}>
+                    <Typography variant="body2">
+                      <p>
+                        <BeenhereIcon className={classes.icons} /> Pick up location :{" "}
+                        {order.location_start_lng}{"  ,  "}{order.location_start_lat}
+                      </p>
+                    </Typography>
+                  </div>
+                  <div className={classes.orderDetails}>
+                    <Typography variant="body2">
+                      <p>
+                        <BeenhereIcon className={classes.icons} /> Drop off location :{" "}
+                        {order.location_end_lng}{"  ,  "}{order.location_end_lat}
                       </p>
                     </Typography>
                   </div>
@@ -147,6 +164,7 @@ export default function ComplexGrid2() {
                       </p>
                     </Typography>
                   </div>
+                
                   <div className={classes.orderDetails}>
                     <Typography variant="body2">
                       <p>
@@ -175,7 +193,7 @@ export default function ComplexGrid2() {
                     variant="subtitle1"
                     style={{ marginRight: "26px", fontSize: "25px" }}
                   >
-                    $19.00
+                   $ {order.price}
                   </Typography>
                 </Grid>
               </div>

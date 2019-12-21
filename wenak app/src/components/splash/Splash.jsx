@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
 import React, { Component } from "react";
-import Slider from "../slider.jsx"
-import logo2 from "../../assets/logo2.png"
+import Slider from "../slider.jsx";
+import logo2 from "../../assets/logo2.png";
+import { Link } from "react-router-dom";
 
 import {
   Button,
@@ -25,9 +26,7 @@ import "../../App.css";
 // We using React Static to prerender our docs with server side rendering, this is a quite simple solution.
 // For more advanced usage please check Responsive docs under the "Usage" section.
 
-const fadeImages = [
-  logo2
-];
+const fadeImages = [logo2];
 
 const getWidth = () => {
   const isSSR = typeof window === "undefined";
@@ -39,8 +38,7 @@ const getWidth = () => {
  * such things.
  */
 const HomepageHeading = ({ mobile }) => (
-
-  <Container size='massive'>
+  <Container size="massive">
     <Slider />
     {/* <Image  className="imgHome"  src='https://pbs.twimg.com/media/D8xwNH_W4AIgLyo.jpg'/> */}
 
@@ -93,9 +91,10 @@ class DesktopContainer extends Component {
     const { fixed } = this.state;
 
     return (
-
-      <Responsive className="slidecolor " getWidth={getWidth}
-      //  minWidth={Responsive.onlyTablet.minWidth}
+      <Responsive
+        className="slidecolor "
+        getWidth={getWidth}
+        //  minWidth={Responsive.onlyTablet.minWidth}
       >
         {/* <Slider/> */}
         <Visibility
@@ -110,7 +109,6 @@ class DesktopContainer extends Component {
             style={{ minHeight: 530, padding: "1em 0em" }}
             vertical
           >
-
             <Menu
               fixed={fixed ? "top" : null}
               inverted={!fixed}
@@ -118,27 +116,25 @@ class DesktopContainer extends Component {
               secondary={!fixed}
               size="large"
             >
-
-
-              <Container className='headerBar'>
-
+              <Container className="headerBar">
                 {/* <Menu.Item as="a" active>
                   Home
                 </Menu.Item> */}
                 {/* <Menu.Item as="a">Work</Menu.Item> */}
                 {/* <Menu.Item as="a">Company</Menu.Item> */}
-                <Menu.Item id= "backButton" >Wenak</Menu.Item>
-                <Menu.Item position="right" >
+                <Menu.Item id="backButton">Wenak</Menu.Item>
+                <Menu.Item position="right">
                   {/* <Button as="a" inverted={!fixed}>
                     Log in
                   </Button> */}
-
-                  <Button className= "backButton" animated>
-                    <Button.Content visible>Go To Site</Button.Content>
-                    <Button.Content hidden>
-                      <Icon name='arrow right' />
-                    </Button.Content>
-                  </Button>
+                  <Link to="/LoginForm">
+                    <Button className="backButton" animated>
+                      <Button.Content visible>Go To Site</Button.Content>
+                      <Button.Content hidden>
+                        <Icon name="arrow right" />
+                      </Button.Content>
+                    </Button>
+                  </Link>
 
                   {/* <Button
                     as="a"
@@ -148,15 +144,10 @@ class DesktopContainer extends Component {
                   >
                     Go To Site
                   </Button> */}
-
-
-
                 </Menu.Item>
               </Container>
-
             </Menu>
             <HomepageHeading />
-
           </Segment>
         </Visibility>
 
@@ -253,73 +244,76 @@ ResponsiveContainer.propTypes = {
 };
 
 const HomepageLayout = () => (
-  <ResponsiveContainer style={{ fontSize: "2em", textAlign: 'left' }}>
-
+  <ResponsiveContainer style={{ fontSize: "2em", textAlign: "left" }}>
     <Segment style={{ padding: "8em 0em" }} vertical>
-
-
       <Grid container stackable verticalAlign="middle">
         <Grid.Row>
-
           <Grid.Column width={8}>
-            <Header as="h3" style={{ fontSize: "2em", textAlign: 'left' }}>
+            <Header as="h3" style={{ fontSize: "2em", textAlign: "left" }}>
               Wenak can be used to order anything in mind
             </Header>
             <p style={{ fontSize: "1.33em" }}>
-              Wenak is a palestinian WebApp created to help solve a wide range problem that we have in palestine.
+              Wenak is a palestinian WebApp created to help solve a wide range
+              problem that we have in palestine.
             </p>
             <br></br>
             <br></br>
-            <Header as="h3" style={{ fontSize: "2em", textAlign: 'left' }}>
+            <Header as="h3" style={{ fontSize: "2em", textAlign: "left" }}>
               Advantages of Wenak
             </Header>
             <p style={{ fontSize: "1.33em" }}>
               Yes that's right, you thought it was the stuff of dreams, but even
-              delivery apps can vary in advantages.<br></br>Our WebApp fascilitates a lot of advantages that we can't say it's avilable in Palestine. Some of these advantages are delivering anything that the customer desires whether it was a mobile
-              charger or food or a gift etc..., in a fast but safe way because customer satisfaction is our top priority.
+              delivery apps can vary in advantages.<br></br>Our WebApp
+              fascilitates a lot of advantages that we can't say it's avilable
+              in Palestine. Some of these advantages are delivering anything
+              that the customer desires whether it was a mobile charger or food
+              or a gift etc..., in a fast but safe way because customer
+              satisfaction is our top priority.
             </p>
           </Grid.Column>
           <Grid.Column floated="right" width={6}>
-
-
-            <Image
-              rounded
-              size="medium"
-              src={fadeImages[0]} />
-
-
+            <Image rounded size="medium" src={fadeImages[0]} />
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
-          <Grid.Column textAlign="center">
-          </Grid.Column>
+          <Grid.Column textAlign="center"></Grid.Column>
         </Grid.Row>
       </Grid>
     </Segment>
-    <Segment style={{ padding: "0em" }} vertical>
-
-    </Segment>
+    <Segment style={{ padding: "0em" }} vertical></Segment>
 
     <Segment inverted vertical style={{ padding: "5em 0em" }}>
       <Container>
         <Grid divided inverted stackable>
           <Grid.Row>
             <Grid.Column width={3} style={{ marginLeft: "200px" }}>
-              <Header className= "footer" inverted as="h4" content="About" />
+              <Header className="footer" inverted as="h4" content="About" />
               <List link inverted>
-                <List.Item className= "footer" as="a">About</List.Item>
-                <List.Item className= "footer" as="a">Contact Us</List.Item>
+                <List.Item className="footer" as="a">
+                  About
+                </List.Item>
+                <List.Item className="footer" as="a">
+                  Contact Us
+                </List.Item>
                 {/* <List.Item as="a">Religious Ceremonies</List.Item> */}
                 {/* <List.Item as="a">Gazebo Plans</List.Item> */}
               </List>
             </Grid.Column>
             <Grid.Column width={3} style={{ marginLeft: "320px" }}>
-              <Header className= "footer" inverted as="h4" content="Services" />
+              <Header className="footer" inverted as="h4" content="Services" />
               <List link inverted>
-                <List.Item className= "footer" as="a">Food Delivery</List.Item>
-                <List.Item className= "footer" as="a">Gadget Delivery</List.Item>
-                <List.Item className= "footer" as="a">People Transportation</List.Item>
-                <List.Item className= "footer" as="a">Gifts Delivery</List.Item>
+                <List.Item className="footer" as="a">
+                  Food Delivery
+                </List.Item>
+                <List.Item className="footer" as="a">
+                  Gadget Delivery
+                </List.Item>
+                <List.Item className="footer" as="a">
+                  People Transportation
+                </List.Item>
+                <List.Item className="footer" as="a">
+                  Gifts Delivery
+                </List.Item>
               </List>
             </Grid.Column>
             {/* <Grid.Column width={7}> */}

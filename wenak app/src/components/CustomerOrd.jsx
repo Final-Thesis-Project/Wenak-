@@ -66,7 +66,7 @@ const useStyles = makeStyles(theme => ({
     indicatorColor: "#ffca28",
     fontSize: "14px",
     textColor: "#212121",
-    marginLeft: "100px",
+    marginLeft: "180px",
     // marginRight: "90px",
     textAlign: "center",
     // paddingLeft: "20px",

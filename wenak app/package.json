@@ -31,6 +31,7 @@
     "express-validator": "^6.3.0",
     "firebase": "^7.5.2",
     "geolocation": "^0.2.0",
+    "google-map-react": "^1.1.5",
     "google-maps-react": "^2.0.2",
     "http-proxy-middleware": "^0.20.0",
     "jquery": "^3.4.1",
@@ -47,6 +48,7 @@
     "pusher": "^3.0.0",
     "pusher-js": "^5.0.3",
     "react": "^16.12.0",
+    "react-awesome-modal": "^2.0.5",
     "react-awesome-slider": "^2.2.1",
     "react-dom": "^16.12.0",
     "react-geocode": "^0.2.1",
@@ -76,7 +78,8 @@
     "eject": "react-scripts eject",
     "server": "nodemon ./servers/server.js",
     "watch-ts": "tsc -w",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "heroku-postbuild": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -1,5 +1,5 @@
 .signUp {
-  margin-top: 4rem;  
+  margin-top: 4rem;
   text-align: center;
   /* align-items: center;
   align-self: center;
@@ -15,4 +15,7 @@
 
 .MuiFormGroup-row {
   justify-content: center;
+}
+.conti {
+  background-color: #aed581;
 }
