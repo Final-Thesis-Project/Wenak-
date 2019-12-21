@@ -156,6 +156,19 @@
   background-color: #ffffff !important;
   font-family: cairo !important;
 }
+
+.signForm4 {
+  position: relative !important;
+  width: 50% !important;
+  /* background: #fff !important; */
+  box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15) !important;
+  margin: 8% 26% !important;
+  padding: 67px !important;
+  border-radius: 0.28571429rem !important;
+  border: 1px solid rgba(34, 36, 38, 0.15) !important;
+  background-color: #ffffff !important;
+  font-family: cairo !important;
+}
 .greenSetting {
   background-color: #aed581 !important;
   color: #ffffff !important;
